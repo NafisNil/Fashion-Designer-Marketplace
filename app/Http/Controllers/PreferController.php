@@ -5,7 +5,7 @@ namespace App\Http\Controllers;
 use App\Models\Prefer;
 use Illuminate\Http\Request;
 use App\Http\Requests\PreferRequest;
-
+use auth;
 class PreferController extends Controller
 {
     /**

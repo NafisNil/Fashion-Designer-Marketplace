@@ -3,6 +3,8 @@
 use App\Http\Controllers\ProfileController;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\PreferController;
+use App\Http\Controllers\ContactController;
+use App\Http\Controllers\FrontendController;
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -14,9 +16,7 @@ use App\Http\Controllers\PreferController;
 |
 */
 
-Route::get('/', function () {
-    return view('welcome');
-});
+Route::get('/',[FrontendController::class, 'index'])->name('index');
 
 Route::get('/dashboard', function () {
     return view('backend.index');
@@ -29,7 +29,7 @@ Route::middleware('auth')->group(function () {
 
     Route::resources([
         'prefer' => PreferController::class,
-       
+        'contact' => ContactController::class
     ]);
 });
 
