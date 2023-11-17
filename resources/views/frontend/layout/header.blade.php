@@ -17,7 +17,7 @@
                       </div>
                     </a>
                     <!-- Logo -->
-                    <div class="logo"><a href="{{route('index')}}"><img src="{{asset('frontend')}}/assets/images/logo.png" alt="logo"></a></div>
+                    <div class="logo"><a href="{{route('index')}}"><img src="{{(!empty($logo->logo))?URL::to('storage/'.$logo->logo):URL::to('image/no_image.png')}}" alt="logo"></a></div>
                 </div>
                 <div class="nav-outer clearfix">
                     

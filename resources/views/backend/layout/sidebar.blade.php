@@ -80,6 +80,15 @@
               </p>
             </a>
           </li>
+          <li class="nav-item">
+            <a href="{{route('logo.index')}}" class="nav-link {{$route == 'logo.index'?'active':''}}">
+              <i class="nav-icon fas fa-th"></i>
+              <p>
+                Logo
+                
+              </p>
+            </a>
+          </li>
 
         </ul>
       </nav>

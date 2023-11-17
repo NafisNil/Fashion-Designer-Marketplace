@@ -4,6 +4,7 @@ use App\Http\Controllers\ProfileController;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\PreferController;
 use App\Http\Controllers\ContactController;
+use App\Http\Controllers\LogoController;
 use App\Http\Controllers\FrontendController;
 /*
 |--------------------------------------------------------------------------
@@ -29,7 +30,8 @@ Route::middleware('auth')->group(function () {
 
     Route::resources([
         'prefer' => PreferController::class,
-        'contact' => ContactController::class
+        'contact' => ContactController::class,
+        'logo' => LogoController::class,
     ]);
 });
 
