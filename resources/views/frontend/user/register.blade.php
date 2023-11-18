@@ -84,15 +84,22 @@
                             <!-- Login Form -->
                             <div class="styled-form">
                                 <h4>Login here</h4>
-                                <form method="post" action="https://24short.creativbydesigns.com/demos/index.html">
+                                @if(Session::has('success'))
+                                    <div class="alert alert-success">{{Session::get('success')}}</div>
+                                 @endif
+                                 @if(Session::has('error'))
+                                 <div class="alert alert-danger">{{Session::get('error')}}</div>
+                              @endif
+                                <form method="post" action="{{route('user_login_store')}}">
+                                    @csrf
                                     <div class="form-group">
                                         <label>Email address</label>
-                                        <input type="email" name="emaill" value="" placeholder="Enter Email Adress" required>
+                                        <input type="email" name="email" value="" placeholder="Enter Email Adress" required>
                                     </div>
                                     
                                     <div class="form-group">
-                                        <label>New Password</label>
-                                        <input type="password" name="password" value="" placeholder="Create password" required>
+                                        <label> Password</label>
+                                        <input type="password" name="password" value="" placeholder="enter password" required>
                                     </div>
                                     <div class="form-group">
                                         <div class="check-box">
@@ -101,7 +108,7 @@
                                         </div>
                                     </div>
                                     <div class="form-group">
-                                        <button type="button" class="theme-btn btn-style-one">
+                                        <button type="submit" class="theme-btn btn-style-one">
                                             Login here
                                         </button>
                                     </div>

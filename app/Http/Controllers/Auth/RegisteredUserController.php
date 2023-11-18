@@ -44,6 +44,10 @@ class RegisteredUserController extends Controller
             'role' => $request->role
         ]);
 
+        if ($user->role === 'user') {
+            # code...
+            return redirect()->route('user_register')->with('success','Registration successfully! Please log in.'); 
+        }
         event(new Registered($user));
 
         Auth::login($user);
