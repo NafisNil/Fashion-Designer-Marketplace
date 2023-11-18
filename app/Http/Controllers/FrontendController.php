@@ -6,6 +6,8 @@ use Illuminate\Http\Request;
 use App\Models\Contact;
 use App\Models\Logo;
 use App\Models\User;
+use App\Models\Prefer; 
+use App\Models\About;
 use Illuminate\Validation\Rules;
 use Illuminate\Support\Facades\Hash;
 use session;
@@ -18,6 +20,7 @@ class FrontendController extends Controller
         return view('frontend.index', $data);
     }
 
+    /* user login */
     public function user_register(){
         $data['contact'] = Contact::first();
         $data['logo'] = Logo::first();
@@ -56,5 +59,28 @@ class FrontendController extends Controller
             return redirect()->back()->with('error', 'User with that email address does not exist!');
         }
 
+    }
+
+
+    /* user login */
+
+
+    /*designer login*/
+
+    public function designer_register(){
+        $data['contact'] = Contact::first();
+        $data['logo'] = Logo::first();
+        $data['prefer'] = Prefer::latest()->get();
+        return view('frontend.designer.register', $data);
+    }
+
+    /* designer login */
+
+
+    public function about(){
+        $data['contact'] = Contact::first();
+        $data['logo'] = Logo::first();
+        $data['about'] = About::first();
+        return view('frontend.about', $data);
     }
 }

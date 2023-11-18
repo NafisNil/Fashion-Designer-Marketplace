@@ -1,6 +1,6 @@
 @extends('frontend.layout.master')
 @section('title')
-    User Registration - Looms
+    Designer Registration - Looms
 @endsection
 @section('content')
     	<!-- Page Title -->
@@ -9,7 +9,7 @@
                 <h2>Login Page</h2>
                 <ul class="bread-crumb clearfix">
                     <li><a href="{{route('index')}}">Home</a></li>
-                    <li>User</li>
+                    <li>Designer</li>
                     <li>Register</li>
                 </ul>
             </div>

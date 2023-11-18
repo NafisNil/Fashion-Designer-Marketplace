@@ -21,7 +21,11 @@ class User extends Authenticatable
         'name',
         'email',
         'password',
-        'role'
+        'role',
+        'gender',
+        'mobile',
+        'logo',
+        'age','experience','preferred_type','expertise', 'max_price', 'min_price', 'approve'
     ];
 
     /**

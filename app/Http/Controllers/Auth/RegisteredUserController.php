@@ -35,13 +35,28 @@ class RegisteredUserController extends Controller
             'name' => ['required', 'string', 'max:255'],
             'email' => ['required', 'string', 'email', 'max:255', 'unique:'.User::class],
             'password' => ['required', 'confirmed', Rules\Password::defaults()],
+            
+            'mobile' => 'numeric',
+            'logo' => 'mimes:jpg,png,svg,jpeg,webp',
+            'age' => 'numeric',
+            'max_price' => 'numeric',
+            'min_price' => 'numeric'
         ]);
 
         $user = User::create([
             'name' => $request->name,
             'email' => $request->email,
             'password' => Hash::make($request->password),
-            'role' => $request->role
+            'role' => $request->role,
+            'gender' => $request->gender,
+            'mobile' => $request->mobile,
+            'logo' => $request->logo,
+            'age' => $request->age,
+            'experience' => $request->experience,
+            'expertise' => $request->expertise,
+            'preferred_type' => $request->preferred_type,
+            'max_price' => $request->max_price,
+            'min_price' => $request->min_price
         ]);
 
         if ($user->role === 'user') {

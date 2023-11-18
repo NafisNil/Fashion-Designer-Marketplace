@@ -38,17 +38,19 @@
                                 </li>
                                 <li class="dropdown"><a href="#">Pages</a>
                                     <ul>
-                                        <li><a href="about.html">About Us</a></li>
-                                        <li><a href="faq.html">Faq's</a></li>
-                                        <li><a href="gift.html">
-                                        @if (Session::has('name'))
+                                        <li><a href="{{route('about_us')}}">About Us</a></li>
+                                        <li><a href="{{route('designer_register')}}">Designer Registration/Login</a></li>
+                                  
+                                        <li>
+                                            @if (Session::has('name'))
                                             {{Session::get('name')}}
-                                      @endif
-                                        </a></li>
-                                        <li><a href="{{route('user_register')}}">
-                                            
-                                            Register/Login 
-                                        </a></li>
+                                            @else
+                                            <a href="{{route('user_register')}}">
+                                                Register/Login 
+                                             </a>
+                                            @endif
+                                           
+                                    </li>
                                     </ul>
                                 </li>
                                 <li class="dropdown"><a href="#">Shop</a>
@@ -76,6 +78,7 @@
                                         <li><a href="not-found.html">Not Found</a></li>
                                     </ul>
                                 </li>
+                                
                                 <li><a href="contact.html">Contact us</a></li>
                             </ul>
                         </div>

@@ -61,6 +61,7 @@
 
             </ul>
           </li>
+          @if (Auth::user()->role == 'admin')
           <li class="nav-item">
             <a href="{{route('prefer.index')}}" class="nav-link {{$route == 'prefer.index'?'active':''}}">
               <i class="nav-icon fas fa-th"></i>
@@ -89,6 +90,18 @@
               </p>
             </a>
           </li>
+          <li class="nav-item">
+            <a href="{{route('about.index')}}" class="nav-link {{$route == 'about.index'?'active':''}}">
+              <i class="nav-icon fas fa-th"></i>
+              <p>
+                About Us
+                
+              </p>
+            </a>
+          </li>
+          @elseif(Auth::user()->role == 'user')
+              
+          @endif
 
         </ul>
       </nav>
