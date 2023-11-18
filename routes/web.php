@@ -18,7 +18,7 @@ use App\Http\Controllers\FrontendController;
 */
 
 Route::get('/',[FrontendController::class, 'index'])->name('index');
-
+Route::get('/user-register',[FrontendController::class, 'user_register'])->name('user_register');
 Route::get('/dashboard', function () {
     return view('backend.index');
 })->middleware(['auth', 'verified'])->name('dashboard');

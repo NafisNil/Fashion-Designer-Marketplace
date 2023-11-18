@@ -41,7 +41,7 @@
                                         <li><a href="about.html">About Us</a></li>
                                         <li><a href="faq.html">Faq's</a></li>
                                         <li><a href="gift.html">Gift</a></li>
-                                        <li><a href="register.html">Register</a></li>
+                                        <li><a href="{{route('user_register')}}">Register</a></li>
                                     </ul>
                                 </li>
                                 <li class="dropdown"><a href="#">Shop</a>

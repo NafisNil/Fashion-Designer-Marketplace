@@ -14,4 +14,10 @@ class FrontendController extends Controller
         $data['logo'] = Logo::first();
         return view('frontend.index', $data);
     }
+
+    public function user_register(){
+        $data['contact'] = Contact::first();
+        $data['logo'] = Logo::first();
+        return view('frontend.user.register', $data);
+    }
 }
