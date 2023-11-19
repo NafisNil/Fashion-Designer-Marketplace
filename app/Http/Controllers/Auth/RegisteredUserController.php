@@ -37,12 +37,12 @@ class RegisteredUserController extends Controller
             'password' => ['required', 'confirmed', Rules\Password::defaults()],
             
             'mobile' => 'numeric',
-            'logo' => 'mimes:jpg,png,svg,jpeg,webp',
+           // 'logo' => 'mimes:jpg,png,svg,jpeg,webp',
             'age' => 'numeric',
             'max_price' => 'numeric',
             'min_price' => 'numeric'
         ]);
-
+        
         $user = User::create([
             'name' => $request->name,
             'email' => $request->email,

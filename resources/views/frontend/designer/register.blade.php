@@ -26,9 +26,12 @@
                             <!-- Login Form -->
                             <div class="styled-form">
                                 <h4>Sign Up</h4>
+                                @if(Session::has('error'))
+                                <div class="alert alert-danger">{{Session::get('error')}}</div>
+                             @endif
                                 <form method="POST" action="{{ route('register') }}">
                                     @csrf
-                            
+                                    
                                     <!-- Name -->
                                     <div>
                                         <x-input-label for="name" :value="__('Name')" />
@@ -40,10 +43,112 @@
                                     <div class="mt-4">
                                         <x-input-label for="email" :value="__('Email')" />
                                         <x-text-input id="email" class="block mt-1 w-full" type="email" name="email" :value="old('email')" required autocomplete="username" />
-                                        <input type="hidden" name="role" value="user">
+                                        <input type="hidden" name="role" value="designer">
                                         <x-input-error :messages="$errors->get('email')" class="mt-2" />
                                     </div>
-                            
+
+                                      <!-- gender -->
+                                      <div class="mt-4">
+                                        <x-input-label for="email" :value="__('Gender')" />
+                                       <div class="form-check">
+                                         <input class="form-check-input" type="radio" name="gender" id="" value="Male" checked>
+                                         <label class="form-check-label" for="">
+                                           Male
+                                         </label>
+                                       </div>
+                                       <div class="form-check">
+                                        <input class="form-check-input" type="radio" name="gender" id="" value="Female">
+                                        <label class="form-check-label" for="">
+                                          Female
+                                        </label>
+                                      </div>
+                                      <div class="form-check">
+                                        <input class="form-check-input" type="radio" name="gender" id="" value="Others">
+                                        <label class="form-check-label" for="">
+                                          Others
+                                        </label>
+                                      </div>
+                                        
+                                        <x-input-error :messages="$errors->get('gender')" class="mt-2" />
+                                    </div>
+
+
+                                      <!-- mobile -->
+                                      <div class="mt-4">
+                                        <x-input-label for="mobile" :value="__('Mobile No.')" />
+                                        <x-text-input id="mobile" class="block mt-1 w-full" type="text" name="mobile" :value="old('mobile')" required autocomplete="username" />
+                                        
+                                        <x-input-error :messages="$errors->get('mobile')" class="mt-2" />
+                                    </div>
+
+                                    <!-- mobile -->
+                                    <div class="mt-4">
+                                        <x-input-label for="age" :value="__('Age')" />
+                                        <x-text-input id="age" class="block mt-1 w-full" type="number" name="age" :value="old('age')" required autocomplete="username" />
+                                        
+                                        <x-input-error :messages="$errors->get('age')" class="mt-2" />
+                                    </div>
+
+                                     <!-- location -->
+                                     <div class="mt-4">
+                                        <x-input-label for="mobile" :value="__('Location')" />
+                                        
+                                        <textarea name="location" id="" cols="30" rows="10" class="block mt-1 w-full" ></textarea>
+                                        <x-input-error :messages="$errors->get('location')" class="mt-2" />
+                                    </div>
+
+                                    <!-- experience -->
+                                    <div class="mt-4">
+                                        <x-input-label for="mobile" :value="__('Experience')" />
+                                        
+                                        <textarea name="experience" id="" cols="30" rows="10" class="block mt-1 w-full" ></textarea>
+                                        <x-input-error :messages="$errors->get('experience')" class="mt-2" />
+                                    </div>
+
+                                    <!-- Expertise -->
+                                    <div class="mt-4">
+                                        <x-input-label for="mobile" :value="__('Expertise')" />
+                                        
+                                        <textarea name="expertise" id="" cols="30" rows="10" class="block mt-1 w-full" ></textarea>
+                                        <x-input-error :messages="$errors->get('expertise')" class="mt-2" />
+                                    </div>
+                                    
+                                    <!-- location -->
+                                    <div class="mt-4">
+                                        <x-input-label for="mobile" :value="__('Preferred Type')" />
+                                        @foreach ($prefer as $item)
+                                        <div class="form-check">
+                                            <input class="form-check-input" type="radio" name="preferred_type" id="" value="{{$item->id}}">
+                                            <label class="form-check-label" for="">
+                                              {{$item->name}}
+                                            </label>
+                                          </div>
+                                        @endforeach
+                                        <x-input-error :messages="$errors->get('location')" class="mt-2" />
+                                    </div>
+
+                                      <!-- max price -->
+                                      <div class="mt-4">
+                                        <x-input-label for="mobile" :value="__('Max Price')" />
+                                        <x-text-input id="mobile" class="block mt-1 w-full" type="text" name="max_price" :value="old('max_price')" required autocomplete="username" />
+                                        
+                                        <x-input-error :messages="$errors->get('max_price')" class="mt-2" />
+                                    </div>
+
+                                      <!-- min price -->
+                                      <div class="mt-4">
+                                        <x-input-label for="mobile" :value="__('Min Price.')" />
+                                        <x-text-input id="mobile" class="block mt-1 w-full" type="text" name="min_price" :value="old('min_price')" required autocomplete="username" />
+                                        
+                                        <x-input-error :messages="$errors->get('min_price')" class="mt-2" />
+                                    </div>
+                                    <!-- logo -->
+                                    <br>
+                                    <div>
+                                        <x-input-label for="name" :value="__('Logo')" />
+                                        <x-text-input id="logo" class="block mt-1 w-full" type="file" name="logo" required autofocus autocomplete="logo" />
+                                        <x-input-error :messages="$errors->get('logo')" class="mt-2" />
+                                    </div>
                                     <!-- Password -->
                                     <div class="mt-4">
                                         <x-input-label for="password" :value="__('Password')" />
