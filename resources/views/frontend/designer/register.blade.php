@@ -144,11 +144,7 @@
                                     </div>
                                     <!-- logo -->
                                     <br>
-                                    <div>
-                                        <x-input-label for="name" :value="__('Logo')" />
-                                        <x-text-input id="logo" class="block mt-1 w-full" type="file" name="logo" required autofocus autocomplete="logo" />
-                                        <x-input-error :messages="$errors->get('logo')" class="mt-2" />
-                                    </div>
+                          
                                     <!-- Password -->
                                     <div class="mt-4">
                                         <x-input-label for="password" :value="__('Password')" />

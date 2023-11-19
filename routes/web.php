@@ -29,9 +29,9 @@ Route::get('/about-us',[FrontendController::class, 'about'])->name('about_us');
 
 //admin
 Route::get('/all-designer',[HomeController::class, 'all_designer'])->name('all_designer');
-Route::get('/designer/{designer}/edit ',[HomeController::class, 'designer_edit'])->name('designer.edit');
+Route::get('/designer_edit',[HomeController::class, 'designer_edit'])->name('designer.edit');
 Route::delete('/designer/{designer}',[HomeController::class, 'designer_destroy'])->name('designer.destroy');
-Route::put('/designer/{designer} ',[HomeController::class, 'designer_update'])->name('designer.update');
+Route::put('/designer-update',[HomeController::class, 'designer_update'])->name('designer.update');
 
 Route::get('/designer-approve/{id}',[HomeController::class, 'approve_designer'])->name('approve_designer');
 Route::get('/designer-disapprove/{id}',[HomeController::class, 'disapprove_designer'])->name('disapprove_designer');

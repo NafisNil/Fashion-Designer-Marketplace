@@ -33,7 +33,7 @@
               </div>
               <!-- /.card-header -->
               <!-- form start -->
-              <form action="{{route('designer.update',[$edit])}}" method="POST" enctype="multipart/form-data">
+              <form action="{{route('designer.update')}}" method="POST" enctype="multipart/form-data">
                 @csrf
                 @method('PUT')
               @include('backend.designer.form')

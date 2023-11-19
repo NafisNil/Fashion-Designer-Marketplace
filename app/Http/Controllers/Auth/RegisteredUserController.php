@@ -42,9 +42,9 @@ class RegisteredUserController extends Controller
             'max_price' => 'numeric',
             'min_price' => 'numeric'
         ]);
-        if ($request->hasFile('logo')) {
-            $this->_uploadImage($request, $user);
-        }
+      
+            
+
         $user = User::create([
             'name' => $request->name,
             'email' => $request->email,
@@ -52,7 +52,7 @@ class RegisteredUserController extends Controller
             'role' => $request->role,
             'gender' => $request->gender,
             'mobile' => $request->mobile,
-            //'logo' => $request->logo,
+       
             'age' => $request->age,
             'experience' => $request->experience,
             'expertise' => $request->expertise,
@@ -60,7 +60,10 @@ class RegisteredUserController extends Controller
             'max_price' => $request->max_price,
             'min_price' => $request->min_price
         ]);
-
+        if ($request->hasFile('logo')) {
+            dd('file');
+            $this->_uploadImage($request, $logo);
+        }
         if ($user->role === 'user') {
             # code...
             return redirect()->route('user_register')->with('success','Registration successfully! Please log in.'); 

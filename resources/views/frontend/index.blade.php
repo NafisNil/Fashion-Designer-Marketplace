@@ -217,265 +217,32 @@
             <div class="auto-container">
                 <!-- Sec Title -->
                 <div class="sec-title">
-                    <h2><span>Populer</span> Products For You !</h2>
+                    <h2><span>Populer</span> Designers For You !</h2>
                 </div>
                 <div class="four-item-carousel owl-carousel owl-theme">
-                    
-                    <!-- Shop Item -->
+                    @foreach ($designer as $item)
                     <div class="shop-item">
                         <div class="inner-box">
                             <div class="image">
-                                <a href="shop-detail.html"><img src="{{asset('frontend')}}/assets/images/resource/products/1.png" alt="24short-img"></a>
-                                <span class="tag flaticon-heart"></span>
-                                <div class="cart-box text-center">
-                                    <a class="cart" href="#">Add to Cart</a>
-                                </div>
+                                <a href="shop-detail.html"><img src="{{(!empty($item->logo))?URL::to('storage/'.$item->logo):URL::to('image/no_image.png')}}" alt="24short-img"></a>
+                                
+                              
                             </div>
                             <div class="lower-content">
-                                <div class="rating">
-                                    <span class="fa fa-star"></span>
-                                    <span class="fa fa-star"></span>
-                                    <span class="fa fa-star"></span>
-                                    <span class="fa fa-star"></span>
-                                    <span class="light fa fa-star"></span>
-                                </div>
-                                <h6><a href="shop-detail.html">masks 95 percent 0.3-μm <br> particles</a></h6>
+                        
+                                <h6><a href="shop-detail.html">{{$item->name}}</a></h6>
                                 <div class="d-flex justify-content-between align-items-center">
-                                    <div class="price"><span>$239.52</span> $362.00</div>
-                                    <!-- Quantity Box -->
-                                    <div class="quantity-box">
-                                        <div class="item-quantity">
-                                            <input class="qty-spinner" type="text" value="1" name="quantity">
-                                        </div>
-                                    </div>
+                                    <div class="price">{{$item->min_price}} -  {{$item->max_price}}</div>
+                 
                                 </div>
                             </div>
                         </div>
                     </div>
                     
+                    @endforeach
                     <!-- Shop Item -->
-                    <div class="shop-item">
-                        <div class="inner-box">
-                            <div class="image">
-                                <a href="shop-detail.html"><img src="{{asset('frontend')}}/assets/images/resource/products/2.png" alt="24short-img"></a>
-                                <span class="tag flaticon-heart"></span>
-                                <div class="cart-box text-center">
-                                    <a class="cart" href="#">Add to Cart</a>
-                                </div>
-                            </div>
-                            <div class="lower-content">
-                                <div class="rating">
-                                    <span class="fa fa-star"></span>
-                                    <span class="fa fa-star"></span>
-                                    <span class="fa fa-star"></span>
-                                    <span class="fa fa-star"></span>
-                                    <span class="light fa fa-star"></span>
-                                </div>
-                                <h6><a href="shop-detail.html">masks 95 percent 0.3-μm <br> particles</a></h6>
-                                <div class="d-flex justify-content-between align-items-center">
-                                    <div class="price"><span>$239.52</span> $362.00</div>
-                                    <!-- Quantity Box -->
-                                    <div class="quantity-box">
-                                        <div class="item-quantity">
-                                            <input class="qty-spinner" type="text" value="1" name="quantity">
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    
-                    <!-- Shop Item -->
-                    <div class="shop-item">
-                        <div class="inner-box">
-                            <div class="image">
-                                <a href="shop-detail.html"><img src="{{asset('frontend')}}/assets/images/resource/products/3.png" alt="24short-img"></a>
-                                <span class="tag flaticon-heart"></span>
-                                <div class="cart-box text-center">
-                                    <a class="cart" href="#">Add to Cart</a>
-                                </div>
-                            </div>
-                            <div class="lower-content">
-                                <div class="rating">
-                                    <span class="fa fa-star"></span>
-                                    <span class="fa fa-star"></span>
-                                    <span class="fa fa-star"></span>
-                                    <span class="fa fa-star"></span>
-                                    <span class="light fa fa-star"></span>
-                                </div>
-                                <h6><a href="shop-detail.html">masks 95 percent 0.3-μm <br> particles</a></h6>
-                                <div class="d-flex justify-content-between align-items-center">
-                                    <div class="price"><span>$239.52</span> $362.00</div>
-                                    <!-- Quantity Box -->
-                                    <div class="quantity-box">
-                                        <div class="item-quantity">
-                                            <input class="qty-spinner" type="text" value="1" name="quantity">
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    
-                    <!-- Shop Item -->
-                    <div class="shop-item">
-                        <div class="inner-box">
-                            <div class="image">
-                                <a href="shop-detail.html"><img src="{{asset('frontend')}}/assets/images/resource/products/4.png" alt="24short-img"></a>
-                                <span class="tag flaticon-heart"></span>
-                                <div class="cart-box text-center">
-                                    <a class="cart" href="#">Add to Cart</a>
-                                </div>
-                            </div>
-                            <div class="lower-content">
-                                <div class="rating">
-                                    <span class="fa fa-star"></span>
-                                    <span class="fa fa-star"></span>
-                                    <span class="fa fa-star"></span>
-                                    <span class="fa fa-star"></span>
-                                    <span class="light fa fa-star"></span>
-                                </div>
-                                <h6><a href="shop-detail.html">masks 95 percent 0.3-μm <br> particles</a></h6>
-                                <div class="d-flex justify-content-between align-items-center">
-                                    <div class="price"><span>$239.52</span> $362.00</div>
-                                    <!-- Quantity Box -->
-                                    <div class="quantity-box">
-                                        <div class="item-quantity">
-                                            <input class="qty-spinner" type="text" value="1" name="quantity">
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    
-                    <!-- Shop Item -->
-                    <div class="shop-item">
-                        <div class="inner-box">
-                            <div class="image">
-                                <a href="shop-detail.html"><img src="{{asset('frontend')}}/assets/images/resource/products/1.png" alt="24short-img"></a>
-                                <span class="tag flaticon-heart"></span>
-                                <div class="cart-box text-center">
-                                    <a class="cart" href="#">Add to Cart</a>
-                                </div>
-                            </div>
-                            <div class="lower-content">
-                                <div class="rating">
-                                    <span class="fa fa-star"></span>
-                                    <span class="fa fa-star"></span>
-                                    <span class="fa fa-star"></span>
-                                    <span class="fa fa-star"></span>
-                                    <span class="light fa fa-star"></span>
-                                </div>
-                                <h6><a href="shop-detail.html">masks 95 percent 0.3-μm <br> particles</a></h6>
-                                <div class="d-flex justify-content-between align-items-center">
-                                    <div class="price"><span>$239.52</span> $362.00</div>
-                                    <!-- Quantity Box -->
-                                    <div class="quantity-box">
-                                        <div class="item-quantity">
-                                            <input class="qty-spinner" type="text" value="1" name="quantity">
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    
-                    <!-- Shop Item -->
-                    <div class="shop-item">
-                        <div class="inner-box">
-                            <div class="image">
-                                <a href="shop-detail.html"><img src="{{asset('frontend')}}/assets/images/resource/products/2.png" alt="24short-img"></a>
-                                <span class="tag flaticon-heart"></span>
-                                <div class="cart-box text-center">
-                                    <a class="cart" href="#">Add to Cart</a>
-                                </div>
-                            </div>
-                            <div class="lower-content">
-                                <div class="rating">
-                                    <span class="fa fa-star"></span>
-                                    <span class="fa fa-star"></span>
-                                    <span class="fa fa-star"></span>
-                                    <span class="fa fa-star"></span>
-                                    <span class="light fa fa-star"></span>
-                                </div>
-                                <h6><a href="shop-detail.html">masks 95 percent 0.3-μm <br> particles</a></h6>
-                                <div class="d-flex justify-content-between align-items-center">
-                                    <div class="price"><span>$239.52</span> $362.00</div>
-                                    <!-- Quantity Box -->
-                                    <div class="quantity-box">
-                                        <div class="item-quantity">
-                                            <input class="qty-spinner" type="text" value="1" name="quantity">
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    
-                    <!-- Shop Item -->
-                    <div class="shop-item">
-                        <div class="inner-box">
-                            <div class="image">
-                                <a href="shop-detail.html"><img src="{{asset('frontend')}}/assets/images/resource/products/3.png" alt="24short-img"></a>
-                                <span class="tag flaticon-heart"></span>
-                                <div class="cart-box text-center">
-                                    <a class="cart" href="#">Add to Cart</a>
-                                </div>
-                            </div>
-                            <div class="lower-content">
-                                <div class="rating">
-                                    <span class="fa fa-star"></span>
-                                    <span class="fa fa-star"></span>
-                                    <span class="fa fa-star"></span>
-                                    <span class="fa fa-star"></span>
-                                    <span class="light fa fa-star"></span>
-                                </div>
-                                <h6><a href="shop-detail.html">masks 95 percent 0.3-μm <br> particles</a></h6>
-                                <div class="d-flex justify-content-between align-items-center">
-                                    <div class="price"><span>$239.52</span> $362.00</div>
-                                    <!-- Quantity Box -->
-                                    <div class="quantity-box">
-                                        <div class="item-quantity">
-                                            <input class="qty-spinner" type="text" value="1" name="quantity">
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    
-                    <!-- Shop Item -->
-                    <div class="shop-item">
-                        <div class="inner-box">
-                            <div class="image">
-                                <a href="shop-detail.html"><img src="{{asset('frontend')}}/assets/images/resource/products/4.png" alt="24short-img"></a>
-                                <span class="tag flaticon-heart"></span>
-                                <div class="cart-box text-center">
-                                    <a class="cart" href="#">Add to Cart</a>
-                                </div>
-                            </div>
-                            <div class="lower-content">
-                                <div class="rating">
-                                    <span class="fa fa-star"></span>
-                                    <span class="fa fa-star"></span>
-                                    <span class="fa fa-star"></span>
-                                    <span class="fa fa-star"></span>
-                                    <span class="light fa fa-star"></span>
-                                </div>
-                                <h6><a href="shop-detail.html">masks 95 percent 0.3-μm <br> particles</a></h6>
-                                <div class="d-flex justify-content-between align-items-center">
-                                    <div class="price"><span>$239.52</span> $362.00</div>
-                                    <!-- Quantity Box -->
-                                    <div class="quantity-box">
-                                        <div class="item-quantity">
-                                            <input class="qty-spinner" type="text" value="1" name="quantity">
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
+                 
+      
                     
                 </div>
             </div>
@@ -1305,18 +1072,11 @@
                     <div class="sponsors-outer">
                         <!-- Sponsors Carousel -->
                         <ul class="sponsors-carousel owl-carousel owl-theme">
-                            <li class="slide-item"><figure class="image-box"><a href="#"><img src="{{asset('frontend')}}/assets/images/clients/1.png" alt=""></a></figure></li>
-                            <li class="slide-item"><figure class="image-box"><a href="#"><img src="{{asset('frontend')}}/assets/images/clients/2.png" alt=""></a></figure></li>
-                            <li class="slide-item"><figure class="image-box"><a href="#"><img src="{{asset('frontend')}}/assets/images/clients/3.png" alt=""></a></figure></li>
-                            <li class="slide-item"><figure class="image-box"><a href="#"><img src="{{asset('frontend')}}/assets/images/clients/4.png" alt=""></a></figure></li>
-                            <li class="slide-item"><figure class="image-box"><a href="#"><img src="{{asset('frontend')}}/assets/images/clients/5.png" alt=""></a></figure></li>
-                            <li class="slide-item"><figure class="image-box"><a href="#"><img src="{{asset('frontend')}}/assets/images/clients/1.png" alt=""></a></figure></li>
-                            <li class="slide-item"><figure class="image-box"><a href="#"><img src="{{asset('frontend')}}/assets/images/clients/2.png" alt=""></a></figure></li>
-                            <li class="slide-item"><figure class="image-box"><a href="#"><img src="{{asset('frontend')}}/assets/images/clients/3.png" alt=""></a></figure></li>
-                            <li class="slide-item"><figure class="image-box"><a href="#"><img src="{{asset('frontend')}}/assets/images/clients/4.png" alt=""></a></figure></li>
-                            <li class="slide-item"><figure class="image-box"><a href="#"><img src="{{asset('frontend')}}/assets/images/clients/5.png" alt=""></a></figure></li>
-                            <li class="slide-item"><figure class="image-box"><a href="#"><img src="{{asset('frontend')}}/assets/images/clients/1.png" alt=""></a></figure></li>
-                            <li class="slide-item"><figure class="image-box"><a href="#"><img src="{{asset('frontend')}}/assets/images/clients/2.png" alt=""></a></figure></li>
+                            @foreach ($partner as $item)
+                            <li class="slide-item"><figure class="image-box"><a href="#"><img src="{{(!empty($item->logo))?URL::to('storage/'.$item->logo):URL::to('image/no_image.png')}}" alt=""></a></figure></li>
+                            @endforeach
+                           
+                 
                         </ul>
                     </div>
                 </div>

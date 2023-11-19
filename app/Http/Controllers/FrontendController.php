@@ -9,9 +9,11 @@ use App\Models\User;
 use App\Models\Prefer; 
 use App\Models\About;
 use App\Models\Category;
+use App\Models\Partner;
 use Illuminate\Validation\Rules;
 use Illuminate\Support\Facades\Hash;
 use session;
+use Auth;
 class FrontendController extends Controller
 {
     //
@@ -19,6 +21,8 @@ class FrontendController extends Controller
         $data['contact'] = Contact::first();
         $data['logo'] = Logo::first();
         $data['category'] = Category::latest()->get();
+        $data['partner'] = Partner::latest()->get();
+        $data['designer'] = User::where('role','designer')->limit(10)->get();
         return view('frontend.index', $data);
     }
 
@@ -85,9 +89,7 @@ class FrontendController extends Controller
 
     /* designer login */
 
-    public function designer_profile_update(Request $request){
-        
-    }
+   
 
 
     public function about(){
