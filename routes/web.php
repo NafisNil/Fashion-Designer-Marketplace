@@ -9,6 +9,8 @@ use App\Http\Controllers\LogoController;
 use App\Http\Controllers\FrontendController;
 use App\Http\Controllers\DesignerController;
 use App\Http\Controllers\AboutController;
+use App\Http\Controllers\CategoryController;
+use App\Http\Controllers\PartnerController;
 use App\Http\Middleware\AdminMiddleware;
 use App\Http\Middleware\UserMiddleware;
 /*
@@ -27,10 +29,12 @@ Route::get('/about-us',[FrontendController::class, 'about'])->name('about_us');
 
 //admin
 Route::get('/all-designer',[HomeController::class, 'all_designer'])->name('all_designer');
-Route::get('/designer/{designer}/edit ',[HomeController::class, 'designer_update'])->name('designer.edit');
+Route::get('/designer/{designer}/edit ',[HomeController::class, 'designer_edit'])->name('designer.edit');
 Route::delete('/designer/{designer}',[HomeController::class, 'designer_destroy'])->name('designer.destroy');
-Route::put('/designer/{designer} ',[HomeController::class, 'designer_update_store'])->name('designer.update');
+Route::put('/designer/{designer} ',[HomeController::class, 'designer_update'])->name('designer.update');
 
+Route::get('/designer-approve/{id}',[HomeController::class, 'approve_designer'])->name('approve_designer');
+Route::get('/designer-disapprove/{id}',[HomeController::class, 'disapprove_designer'])->name('disapprove_designer');
 //admin
 
 
@@ -60,7 +64,9 @@ Route::middleware(['auth','admin'])->group(function () {
         'prefer' => PreferController::class,
         'contact' => ContactController::class,
         'logo' => LogoController::class,
-        'about' => AboutController::class
+        'about' => AboutController::class,
+        'category' => CategoryController::class,
+        'partner' => PartnerController::class
     ]);
 });
 

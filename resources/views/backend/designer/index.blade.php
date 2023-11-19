@@ -44,6 +44,7 @@
                   <th>Logo</th>
                   <th>Max Price</th>
                   <th>Min Price</th>
+                  <th>Status</th>
                   <th>Action</th>
                 </tr>
                 </thead>
@@ -60,13 +61,25 @@
                     <td> {{$item->max_price}}</td>
                     <td>{{$item->min_price}}</td>
                     <td>
-                        <a href="{{route('designer.edit',[$item])}}"><button class="btn btn-outline-info btn-sm"><i class="fas fa-pen-square"></i></button></a>
+                      @if ($item->approve == 1)
+                          <span class="text-green"> Approve </span>
+                      @else
+                      <span class="text-danger"> Not - Approve </span>
+                      @endif
+                    </td>
+                    <td>
+                        {{--<a href="{{route('designer.edit',[$item])}}"><button class="btn btn-outline-info btn-sm"><i class="fas fa-pen-square"></i></button></a>
                     
                         <form action="{{route('designer.destroy',[$item])}}" method="POST">
                           @method('DELETE')
                           @csrf
                           <button class="btn btn-outline-danger btn-sm"><i class="fas fa-trash"></i></button>
-                      </form>
+                      </form>--}}
+                      @if ($item->approve == 0)
+                          <a href="{{route('approve_designer', $item->id)}}" class="btn btn-sm btn-success"> Approve</a>
+                      @elseif($item->approve == 1)
+                          <a href="{{route('disapprove_designer', $item->id)}}" class="btn btn-sm btn-success"> Disapprove</a>
+                      @endif
                     </td>
                   </tr>
                 @endforeach
@@ -75,6 +88,7 @@
                 </tbody>
                 <tfoot>
                 <tr>
+                  <th>#</th>
                     <th>Name</th>
                     <th>Email</th>
                     <th>Mobile</th>
@@ -82,6 +96,7 @@
                     <th>Logo</th>
                     <th>Max Price</th>
                     <th>Min Price</th>
+                    <th>Status</th>
                     <th>Action</th>
                 </tr>
                 </tfoot>

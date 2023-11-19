@@ -195,84 +195,18 @@
                 </div>
                 <div class="shopby-category owl-carousel owl-theme">				
                     <!-- Shop category -->
+                    @foreach ($category as $item)
+                  
                     <div class="shop-category">
                         <div class="category-image">
                             <a class="text-center" href="shop.html">
-                                <img src="{{asset('frontend')}}/assets/images/resource/category/chocolates.jpg" alt="24short-img">
-                                <span class="category-title">Chocolates</span>
+                                <img src="{{(!empty($item->logo))?URL::to('storage/'.$item->logo):URL::to('image/no_image.png')}}" alt="24short-img">
+                                <span class="category-title">{{$item->name}}</span>
                             </a>
                         </div>
                     </div>
-    
-                    <!-- Shop category -->
-                    <div class="shop-category">
-                        <div class="category-image">
-                            <a class="text-center" href="shop.html">
-                                <img src="{{asset('frontend')}}/assets/images/resource/category/flowers.jpg" alt="24short-img">
-                                <span class="category-title">flowers</span>
-                            </a>
-                        </div>
-                    </div>
-    
-                    <!-- Shop category -->
-                    <div class="shop-category">
-                        <div class="category-image">
-                            <a class="text-center" href="shop.html">
-                                <img src="{{asset('frontend')}}/assets/images/resource/category/mug.jpg" alt="24short-img">
-                                <span class="category-title">mugs</span>
-                            </a>
-                        </div>
-                    </div>
-    
-                    <!-- Shop category -->
-                    <div class="shop-category">
-                        <div class="category-image">
-                            <a class="text-center" href="shop.html">
-                                <img src="{{asset('frontend')}}/assets/images/resource/category/jwellery.jpg" alt="24short-img">
-                                <span class="category-title">jwellery</span>
-                            </a>
-                        </div>
-                    </div>
-    
-                    <!-- Shop category -->
-                    <div class="shop-category">
-                        <div class="category-image">
-                            <a class="text-center" href="shop.html">
-                                <img src="{{asset('frontend')}}/assets/images/resource/category/personalised.jpg" alt="24short-img">
-                                <span class="category-title">personalised</span>
-                            </a>
-                        </div>
-                    </div>
-    
-                    <!-- Shop category -->
-                    <div class="shop-category">
-                        <div class="category-image">
-                            <a class="text-center" href="shop.html">
-                                <img src="{{asset('frontend')}}/assets/images/resource/category/soft-toys.jpg" alt="24short-img">
-                                <span class="category-title">soft-toys</span>
-                            </a>
-                        </div>
-                    </div>
-    
-                    <!-- Shop category -->
-                    <div class="shop-category">
-                        <div class="category-image">
-                            <a class="text-center" href="shop.html">
-                                <img src="{{asset('frontend')}}/assets/images/resource/category/sanglases.png" alt="24short-img">
-                                <span class="category-title">Fashion Sunglass</span>
-                            </a>
-                        </div>
-                    </div>
-    
-                    <!-- Shop category -->
-                    <div class="shop-category">
-                        <div class="category-image">
-                            <a class="text-center" href="shop.html">
-                                <img src="{{asset('frontend')}}/assets/images/resource/category/photoshots.jpg" alt="24short-img">
-                                <span class="category-title">Hot Shots</span>
-                            </a>
-                        </div>
-                    </div>
+      
+                    @endforeach
             </div>
             </div>
         </section>	

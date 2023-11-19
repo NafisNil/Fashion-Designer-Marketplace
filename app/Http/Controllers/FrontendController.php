@@ -8,6 +8,7 @@ use App\Models\Logo;
 use App\Models\User;
 use App\Models\Prefer; 
 use App\Models\About;
+use App\Models\Category;
 use Illuminate\Validation\Rules;
 use Illuminate\Support\Facades\Hash;
 use session;
@@ -17,6 +18,7 @@ class FrontendController extends Controller
     public function index(){
         $data['contact'] = Contact::first();
         $data['logo'] = Logo::first();
+        $data['category'] = Category::latest()->get();
         return view('frontend.index', $data);
     }
 

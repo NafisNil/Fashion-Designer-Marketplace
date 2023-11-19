@@ -108,6 +108,25 @@
               </p>
             </a>
           </li>
+
+          <li class="nav-item">
+            <a href="{{route('category.index')}}" class="nav-link {{$route == 'category.index'?'active':''}}">
+              <i class="nav-icon fas fa-th"></i>
+              <p>
+                Category
+                
+              </p>
+            </a>
+          </li>
+          <li class="nav-item">
+            <a href="{{route('partner.index')}}" class="nav-link {{$route == 'partner.index'?'active':''}}">
+              <i class="nav-icon fas fa-th"></i>
+              <p>
+                Partner
+                
+              </p>
+            </a>
+          </li>
           @elseif(Auth::user()->role == 'user')
               
           @endif
