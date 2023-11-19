@@ -8,6 +8,8 @@ use App\Http\Controllers\HomeController;
 use App\Http\Controllers\LogoController;
 use App\Http\Controllers\FrontendController;
 use App\Http\Controllers\DesignerController;
+use App\Http\Controllers\SliderController;
+use App\Http\Controllers\ProductController;
 use App\Http\Controllers\AboutController;
 use App\Http\Controllers\CategoryController;
 use App\Http\Controllers\PartnerController;
@@ -32,6 +34,9 @@ Route::get('/all-designer',[HomeController::class, 'all_designer'])->name('all_d
 Route::get('/designer_edit',[HomeController::class, 'designer_edit'])->name('designer.edit');
 Route::delete('/designer/{designer}',[HomeController::class, 'designer_destroy'])->name('designer.destroy');
 Route::put('/designer-update',[HomeController::class, 'designer_update'])->name('designer.update');
+Route::resources([
+    'product' => ProductController::class
+]);
 
 Route::get('/designer-approve/{id}',[HomeController::class, 'approve_designer'])->name('approve_designer');
 Route::get('/designer-disapprove/{id}',[HomeController::class, 'disapprove_designer'])->name('disapprove_designer');
@@ -66,8 +71,11 @@ Route::middleware(['auth','admin'])->group(function () {
         'logo' => LogoController::class,
         'about' => AboutController::class,
         'category' => CategoryController::class,
-        'partner' => PartnerController::class
+        'partner' => PartnerController::class,
+        'slider' => SliderController::class,
+     
     ]);
 });
+
 
 require __DIR__.'/auth.php';

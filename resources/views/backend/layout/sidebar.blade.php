@@ -118,6 +118,16 @@
               </p>
             </a>
           </li>
+
+          <li class="nav-item">
+            <a href="{{route('slider.index')}}" class="nav-link {{$route == 'slider.index'?'active':''}}">
+              <i class="nav-icon fas fa-th"></i>
+              <p>
+                Slider
+                
+              </p>
+            </a>
+          </li>
           <li class="nav-item">
             <a href="{{route('partner.index')}}" class="nav-link {{$route == 'partner.index'?'active':''}}">
               <i class="nav-icon fas fa-th"></i>
@@ -133,6 +143,16 @@
               <i class="nav-icon fas fa-th"></i>
               <p>
                 Profile Picture
+                
+              </p>
+            </a>
+          </li>
+
+          <li class="nav-item">
+            <a href="{{route('product.index')}}" class="nav-link {{$route == 'product.index'?'active':''}}">
+              <i class="nav-icon fas fa-th"></i>
+              <p>
+                Products
                 
               </p>
             </a>

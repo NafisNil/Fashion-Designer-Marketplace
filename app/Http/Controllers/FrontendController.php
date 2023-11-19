@@ -10,6 +10,8 @@ use App\Models\Prefer;
 use App\Models\About;
 use App\Models\Category;
 use App\Models\Partner;
+use App\Models\Slider;
+use App\Models\Product;
 use Illuminate\Validation\Rules;
 use Illuminate\Support\Facades\Hash;
 use session;
@@ -22,6 +24,8 @@ class FrontendController extends Controller
         $data['logo'] = Logo::first();
         $data['category'] = Category::latest()->get();
         $data['partner'] = Partner::latest()->get();
+        $data['slider'] = Slider::latest()->get();
+        $data['product'] = Product::latest()->get();
         $data['designer'] = User::where('role','designer')->limit(10)->get();
         return view('frontend.index', $data);
     }

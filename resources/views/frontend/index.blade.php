@@ -7,8 +7,7 @@
     	<!-- Main Section -->
         <section class="main-slider">
             <div class="main-slider-carousel owl-carousel owl-theme">
-                
-                <!-- Slide One -->
+                @foreach ($slider as $item)
                 <div class="slide">
                     <!-- Ct Dot Animated -->
                     <div class="ct-dot-animated">
@@ -25,104 +24,28 @@
                         </div>
                     </div>
                     <!-- End Ct Dot Animated -->
-                    <div class="image-layer" style="background-image: url(frontend/assets/images/main-slider/image-1.jpg)"></div>
+                    <div class="image-layer" style="background-image: url({{(!empty($item->logo))?URL::to('storage/'.$item->logo):URL::to('image/no_image.png')}})"></div>
                     <div class="auto-container">
                         
                         <!-- Content Column -->
                         <div class="content-box">
                             <div class="box-inner">
                                 <div class="vector-icon-three" style="background-image: url(frontend/assets/images/main-slider/vector-3.png)"></div>
-                                <div class="sale-box">
-                                    SALE
-                                    <span>30<i>% OFF</i></span>
-                                </div>
-                                <div class="title">2023 Collection</div>
-                                <h1>Bard of Beauty Collection</h1>
-                                <div class="price">Starting From <span>$560.99</span></div>
-                                <a href="shop-detail.html" class="shop-now">Shop Now</a>
+                               
+                                <div class="title">{{$item->title}}</div>
+                                <h1>{{$item->subtitle}}</h1>
+                             
                             </div>
                         </div>
                         
                     </div>
                 </div>
+                @endforeach
+                <!-- Slide One -->
+             
                 <!-- End Slide One -->
                 
-                <!-- Slide Two -->
-                <div class="slide">
-                    <!-- Ct Dot Animated -->
-                    <div class="ct-dot-animated">
-                        <div class="ct-dot-container">
-                            <div class="ct-dot-item">
-                                <span></span>
-                            </div>
-                            <div class="ct-dot-item">
-                                <span></span>
-                            </div>
-                            <div class="ct-dot-item">
-                                <span></span>
-                            </div>
-                        </div>
-                    </div>
-                    <!-- End Ct Dot Animated -->
-                    <div class="image-layer" style="background-image: url(frontend/assets/images/main-slider/image-2.jpg)"></div>
-                    <div class="auto-container">
-                        
-                        <!-- Content Column -->
-                        <div class="content-box">
-                            <div class="box-inner">
-                                <div class="vector-icon-three" style="background-image: url(frontend/assets/images/main-slider/vector-3.png)"></div>
-                                <div class="sale-box">
-                                    SALE
-                                    <span>30<i>% OFF</i></span>
-                                </div>
-                                <div class="title">2023 Collection</div>
-                                <h1>Best of the Best Collection</h1>
-                                <div class="price">Starting From <span>$360.99</span></div>
-                                <a href="shop-detail.html" class="shop-now">Shop Now</a>
-                            </div>
-                        </div>
-                        
-                    </div>
-                </div>
-                <!-- End Slide Two -->
-                
-                <!-- Slide Three -->
-                <div class="slide">
-                    <!-- Ct Dot Animated -->
-                    <div class="ct-dot-animated">
-                        <div class="ct-dot-container">
-                            <div class="ct-dot-item">
-                                <span></span>
-                            </div>
-                            <div class="ct-dot-item">
-                                <span></span>
-                            </div>
-                            <div class="ct-dot-item">
-                                <span></span>
-                            </div>
-                        </div>
-                    </div>
-                    <!-- End Ct Dot Animated -->
-                    <div class="image-layer" style="background-image: url(frontend/assets/images/main-slider/image-3.jpg)"></div>
-                    <div class="auto-container">
-                        
-                        <!-- Content Column -->
-                        <div class="content-box">
-                            <div class="box-inner">
-                                <div class="vector-icon-three" style="background-image: url(frontend/assets/images/main-slider/vector-3.png)"></div>
-                                <div class="sale-box">SALE
-                                    <span>30<i>% OFF</i></span>
-                                </div>
-                                <div class="title">2023 Collection</div>
-                                <h1>Best Fashion Collection</h1>
-                                <div class="price">Starting From <span>$860.99</span></div>
-                                <a href="shop-detail.html" class="shop-now">Shop Now</a>
-                            </div>
-                        </div>
-                        
-                    </div>
-                </div>
-                <!-- End Slide Three -->
+  
                 
             </div>
             
@@ -250,32 +173,11 @@
         <!-- End Products Section -->
         
         <!-- Brand Section -->
-        <section class="brand-section">
-            <div class="outer-container">
-                <div class="animation_mode">
-                    <h1>Design. <span>Brand</span>. <strong>Quality</strong></h1>
-                    <img src="{{asset('frontend')}}/assets/images/icons/icon-1.png" alt="24short-img">
-                    <img src="{{asset('frontend')}}/assets/images/icons/feature.png" alt="24short-img">
-                    <img src="{{asset('frontend')}}/assets/images/icons/icon-2.png" alt="24short-img">
-                    <h1>Design. <span>Brand</span>. <strong>Quality</strong></h1>
-                    <img src="{{asset('frontend')}}/assets/images/icons/icon-1.png" alt="24short-img">
-                    <img src="{{asset('frontend')}}/assets/images/icons/feature.png" alt="24short-img">
-                    <img src="{{asset('frontend')}}/assets/images/icons/icon-2.png" alt="24short-img">
-                    <h1>Design. <span>Brand</span>. <strong>Quality</strong></h1>
-                    <img src="{{asset('frontend')}}/assets/images/icons/icon-1.png" alt="24short-img">
-                    <img src="{{asset('frontend')}}/assets/images/icons/feature.png" alt="24short-img">
-                    <img src="{{asset('frontend')}}/assets/images/icons/icon-2.png" alt="24short-img">
-                    <h1>Design. <span>Brand</span>. <strong>Quality</strong></h1>
-                    <img src="{{asset('frontend')}}/assets/images/icons/icon-1.png" alt="24short-img">
-                    <img src="{{asset('frontend')}}/assets/images/icons/feature.png" alt="24short-img">
-                    <img src="{{asset('frontend')}}/assets/images/icons/icon-2.png" alt="24short-img">
-                </div>
-            </div>
-        </section>
+   
         <!-- End Brand Section -->
         
         <!-- Sale Section -->
-        <section class="sale-section">
+     {{--  <section class="sale-section">
             <div class="auto-container">
                 <div class="row clearfix">
                 
@@ -321,7 +223,7 @@
                     
                 </div>
             </div>
-        </section>
+        </section>--}} 
         <!-- End Sale Section -->
         
         <!-- Products Section Two -->
@@ -330,7 +232,7 @@
             <div class="auto-container">
                 <!-- Sec Title -->
                 <div class="sec-title centered">
-                    <h2><span>Populer</span> Products For You !</h2>
+                    <h2><span>Populer</span> Designers For You !</h2>
                 </div>
                 <div class="inner-container">
                     <div class="single-item-carousel owl-carousel owl-theme">
@@ -338,359 +240,29 @@
                         <!-- Slide -->
                         <div class="slide">
                             <div class="row clearfix">
-                            
-                                <!-- Product Block Four -->
-                                <div class="product-block-four col-lg-3 col-md-6 col-sm-6">
-                                    <div class="inner-box d-flex justify-content-between align-items-center flex-wrap">
-                                        <div class="image">
-                                            <span class="number">01</span>
-                                            <img src="{{asset('frontend')}}/assets/images/resource/product-1.png" alt="24short-img">
-                                        </div>
-                                        <div class="content">
-                                            <h6><a href="shop-detail.html">Full Sleeve Cotton</a></h6>
-                                            <div class="total-products">(312 Product)</div>
-                                        </div>
-                                    </div>
-                                </div>
-                                
-                                <!-- Product Block Four -->
-                                <div class="product-block-four col-lg-3 col-md-6 col-sm-6">
-                                    <div class="inner-box d-flex justify-content-between align-items-center flex-wrap">
-                                        <div class="image">
-                                            <span class="number">02</span>
-                                            <img src="{{asset('frontend')}}/assets/images/resource/product-2.png" alt="24short-img">
-                                        </div>
-                                        <div class="content">
-                                            <h6><a href="shop-detail.html">Full Sleeve Cotton</a></h6>
-                                            <div class="total-products">(312 Product)</div>
+                            @foreach ($designer as $key=>$item)
+                                      <!-- Product Block Four -->
+                                      <div class="product-block-four col-lg-3 col-md-6 col-sm-6">
+                                        <div class="inner-box d-flex justify-content-between align-items-center flex-wrap">
+                                            <div class="image">
+                                                <span class="number">{{++$key}}</span>
+                                                <img src="{{asset('frontend')}}/assets/images/resource/product-1.png" alt="24short-img">
+                                            </div>
+                                            <div class="content">
+                                                <h6><a href="shop-detail.html">{{$item->name}}</a></h6>
+                                                <div class="total-products">(312 Product)</div>
+                                            </div>
                                         </div>
                                     </div>
-                                </div>
-                                
-                                <!-- Product Block Four -->
-                                <div class="product-block-four col-lg-3 col-md-6 col-sm-6">
-                                    <div class="inner-box d-flex justify-content-between align-items-center flex-wrap">
-                                        <div class="image">
-                                            <span class="number">03</span>
-                                            <img src="{{asset('frontend')}}/assets/images/resource/product-3.png" alt="24short-img">
-                                        </div>
-                                        <div class="content">
-                                            <h6><a href="shop-detail.html">Monkey Red Caps</a></h6>
-                                            <div class="total-products">(213 Product)</div>
-                                        </div>
-                                    </div>
-                                </div>
-                                
-                                <!-- Product Block Four -->
-                                <div class="product-block-four col-lg-3 col-md-6 col-sm-6">
-                                    <div class="inner-box d-flex justify-content-between align-items-center flex-wrap">
-                                        <div class="image">
-                                            <span class="number">04</span>
-                                            <img src="{{asset('frontend')}}/assets/images/resource/product-4.png" alt="24short-img">
-                                        </div>
-                                        <div class="content">
-                                            <h6><a href="shop-detail.html">Men,s Cotton Pant</a></h6>
-                                            <div class="total-products">(461 Product)</div>
-                                        </div>
-                                    </div>
-                                </div>
-                                
-                                <!-- Product Block Four -->
-                                <div class="product-block-four col-lg-3 col-md-6 col-sm-6">
-                                    <div class="inner-box d-flex justify-content-between align-items-center flex-wrap">
-                                        <div class="image">
-                                            <span class="number">05</span>
-                                            <img src="{{asset('frontend')}}/assets/images/resource/product-5.png" alt="24short-img">
-                                        </div>
-                                        <div class="content">
-                                            <h6><a href="shop-detail.html">Full Sleeve Cotton</a></h6>
-                                            <div class="total-products">(312 Product)</div>
-                                        </div>
-                                    </div>
-                                </div>
-                                
-                                <!-- Product Block Four -->
-                                <div class="product-block-four col-lg-3 col-md-6 col-sm-6">
-                                    <div class="inner-box d-flex justify-content-between align-items-center flex-wrap">
-                                        <div class="image">
-                                            <span class="number">06</span>
-                                            <img src="{{asset('frontend')}}/assets/images/resource/product-6.png" alt="24short-img">
-                                        </div>
-                                        <div class="content">
-                                            <h6><a href="shop-detail.html">Full Sleeve Cotton</a></h6>
-                                            <div class="total-products">(567 Product)</div>
-                                        </div>
-                                    </div>
-                                </div>
-                                
-                                <!-- Product Block Four -->
-                                <div class="product-block-four col-lg-3 col-md-6 col-sm-6">
-                                    <div class="inner-box d-flex justify-content-between align-items-center flex-wrap">
-                                        <div class="image">
-                                            <span class="number">07</span>
-                                            <img src="{{asset('frontend')}}/assets/images/resource/product-7.png" alt="24short-img">
-                                        </div>
-                                        <div class="content">
-                                            <h6><a href="shop-detail.html">Monkey Red Caps</a></h6>
-                                            <div class="total-products">(213 Product)</div>
-                                        </div>
-                                    </div>
-                                </div>
-                                
-                                <!-- Product Block Four -->
-                                <div class="product-block-four col-lg-3 col-md-6 col-sm-6">
-                                    <div class="inner-box d-flex justify-content-between align-items-center flex-wrap">
-                                        <div class="image">
-                                            <span class="number">08</span>
-                                            <img src="{{asset('frontend')}}/assets/images/resource/product-8.png" alt="24short-img">
-                                        </div>
-                                        <div class="content">
-                                            <h6><a href="shop-detail.html">Men,s Cotton Pant</a></h6>
-                                            <div class="total-products">(461 Product)</div>
-                                        </div>
-                                    </div>
-                                </div>
+                                    
+                            @endforeach
+                          
+                               
                                 
                             </div>
                         </div>
                         
-                        <!-- Slide -->
-                        <div class="slide">
-                            <div class="row clearfix">
-                            
-                                <!-- Product Block Four -->
-                                <div class="product-block-four col-lg-3 col-md-6 col-sm-6">
-                                    <div class="inner-box d-flex justify-content-between align-items-center flex-wrap">
-                                        <div class="image">
-                                            <span class="number">01</span>
-                                            <img src="{{asset('frontend')}}/assets/images/resource/product-1.png" alt="24short-img">
-                                        </div>
-                                        <div class="content">
-                                            <h6><a href="shop-detail.html">Full Sleeve Cotton</a></h6>
-                                            <div class="total-products">(312 Product)</div>
-                                        </div>
-                                    </div>
-                                </div>
-                                
-                                <!-- Product Block Four -->
-                                <div class="product-block-four col-lg-3 col-md-6 col-sm-6">
-                                    <div class="inner-box d-flex justify-content-between align-items-center flex-wrap">
-                                        <div class="image">
-                                            <span class="number">02</span>
-                                            <img src="{{asset('frontend')}}/assets/images/resource/product-2.png" alt="24short-img">
-                                        </div>
-                                        <div class="content">
-                                            <h6><a href="shop-detail.html">Full Sleeve Cotton</a></h6>
-                                            <div class="total-products">(312 Product)</div>
-                                        </div>
-                                    </div>
-                                </div>
-                                
-                                <!-- Product Block Four -->
-                                <div class="product-block-four col-lg-3 col-md-6 col-sm-6">
-                                    <div class="inner-box d-flex justify-content-between align-items-center flex-wrap">
-                                        <div class="image">
-                                            <span class="number">03</span>
-                                            <img src="{{asset('frontend')}}/assets/images/resource/product-3.png" alt="24short-img">
-                                        </div>
-                                        <div class="content">
-                                            <h6><a href="shop-detail.html">Monkey Red Caps</a></h6>
-                                            <div class="total-products">(213 Product)</div>
-                                        </div>
-                                    </div>
-                                </div>
-                                
-                                <!-- Product Block Four -->
-                                <div class="product-block-four col-lg-3 col-md-6 col-sm-6">
-                                    <div class="inner-box d-flex justify-content-between align-items-center flex-wrap">
-                                        <div class="image">
-                                            <span class="number">04</span>
-                                            <img src="{{asset('frontend')}}/assets/images/resource/product-4.png" alt="24short-img">
-                                        </div>
-                                        <div class="content">
-                                            <h6><a href="shop-detail.html">Men,s Cotton Pant</a></h6>
-                                            <div class="total-products">(461 Product)</div>
-                                        </div>
-                                    </div>
-                                </div>
-                                
-                                <!-- Product Block Four -->
-                                <div class="product-block-four col-lg-3 col-md-6 col-sm-6">
-                                    <div class="inner-box d-flex justify-content-between align-items-center flex-wrap">
-                                        <div class="image">
-                                            <span class="number">05</span>
-                                            <img src="{{asset('frontend')}}/assets/images/resource/product-5.png" alt="24short-img">
-                                        </div>
-                                        <div class="content">
-                                            <h6><a href="shop-detail.html">Full Sleeve Cotton</a></h6>
-                                            <div class="total-products">(312 Product)</div>
-                                        </div>
-                                    </div>
-                                </div>
-                                
-                                <!-- Product Block Four -->
-                                <div class="product-block-four col-lg-3 col-md-6 col-sm-6">
-                                    <div class="inner-box d-flex justify-content-between align-items-center flex-wrap">
-                                        <div class="image">
-                                            <span class="number">06</span>
-                                            <img src="{{asset('frontend')}}/assets/images/resource/product-6.png" alt="24short-img">
-                                        </div>
-                                        <div class="content">
-                                            <h6><a href="shop-detail.html">Full Sleeve Cotton</a></h6>
-                                            <div class="total-products">(567 Product)</div>
-                                        </div>
-                                    </div>
-                                </div>
-                                
-                                <!-- Product Block Four -->
-                                <div class="product-block-four col-lg-3 col-md-6 col-sm-6">
-                                    <div class="inner-box d-flex justify-content-between align-items-center flex-wrap">
-                                        <div class="image">
-                                            <span class="number">07</span>
-                                            <img src="{{asset('frontend')}}/assets/images/resource/product-7.png" alt="24short-img">
-                                        </div>
-                                        <div class="content">
-                                            <h6><a href="shop-detail.html">Monkey Red Caps</a></h6>
-                                            <div class="total-products">(213 Product)</div>
-                                        </div>
-                                    </div>
-                                </div>
-                                
-                                <!-- Product Block Four -->
-                                <div class="product-block-four col-lg-3 col-md-6 col-sm-6">
-                                    <div class="inner-box d-flex justify-content-between align-items-center flex-wrap">
-                                        <div class="image">
-                                            <span class="number">08</span>
-                                            <img src="{{asset('frontend')}}/assets/images/resource/product-8.png" alt="24short-img">
-                                        </div>
-                                        <div class="content">
-                                            <h6><a href="shop-detail.html">Men,s Cotton Pant</a></h6>
-                                            <div class="total-products">(461 Product)</div>
-                                        </div>
-                                    </div>
-                                </div>
-                                
-                            </div>
-                        </div>
-                        
-                        <!-- Slide -->
-                        <div class="slide">
-                            <div class="row clearfix">
-                            
-                                <!-- Product Block Four -->
-                                <div class="product-block-four col-lg-3 col-md-6 col-sm-6">
-                                    <div class="inner-box d-flex justify-content-between align-items-center flex-wrap">
-                                        <div class="image">
-                                            <span class="number">01</span>
-                                            <img src="{{asset('frontend')}}/assets/images/resource/product-1.png" alt="24short-img">
-                                        </div>
-                                        <div class="content">
-                                            <h6><a href="shop-detail.html">Full Sleeve Cotton</a></h6>
-                                            <div class="total-products">(312 Product)</div>
-                                        </div>
-                                    </div>
-                                </div>
-                                
-                                <!-- Product Block Four -->
-                                <div class="product-block-four col-lg-3 col-md-6 col-sm-6">
-                                    <div class="inner-box d-flex justify-content-between align-items-center flex-wrap">
-                                        <div class="image">
-                                            <span class="number">02</span>
-                                            <img src="{{asset('frontend')}}/assets/images/resource/product-2.png" alt="24short-img">
-                                        </div>
-                                        <div class="content">
-                                            <h6><a href="shop-detail.html">Full Sleeve Cotton</a></h6>
-                                            <div class="total-products">(312 Product)</div>
-                                        </div>
-                                    </div>
-                                </div>
-                                
-                                <!-- Product Block Four -->
-                                <div class="product-block-four col-lg-3 col-md-6 col-sm-6">
-                                    <div class="inner-box d-flex justify-content-between align-items-center flex-wrap">
-                                        <div class="image">
-                                            <span class="number">03</span>
-                                            <img src="{{asset('frontend')}}/assets/images/resource/product-3.png" alt="24short-img">
-                                        </div>
-                                        <div class="content">
-                                            <h6><a href="shop-detail.html">Monkey Red Caps</a></h6>
-                                            <div class="total-products">(213 Product)</div>
-                                        </div>
-                                    </div>
-                                </div>
-                                
-                                <!-- Product Block Four -->
-                                <div class="product-block-four col-lg-3 col-md-6 col-sm-6">
-                                    <div class="inner-box d-flex justify-content-between align-items-center flex-wrap">
-                                        <div class="image">
-                                            <span class="number">04</span>
-                                            <img src="{{asset('frontend')}}/assets/images/resource/product-4.png" alt="24short-img">
-                                        </div>
-                                        <div class="content">
-                                            <h6><a href="shop-detail.html">Men,s Cotton Pant</a></h6>
-                                            <div class="total-products">(461 Product)</div>
-                                        </div>
-                                    </div>
-                                </div>
-                                
-                                <!-- Product Block Four -->
-                                <div class="product-block-four col-lg-3 col-md-6 col-sm-6">
-                                    <div class="inner-box d-flex justify-content-between align-items-center flex-wrap">
-                                        <div class="image">
-                                            <span class="number">05</span>
-                                            <img src="{{asset('frontend')}}/assets/images/resource/product-5.png" alt="24short-img">
-                                        </div>
-                                        <div class="content">
-                                            <h6><a href="shop-detail.html">Full Sleeve Cotton</a></h6>
-                                            <div class="total-products">(312 Product)</div>
-                                        </div>
-                                    </div>
-                                </div>
-                                
-                                <!-- Product Block Four -->
-                                <div class="product-block-four col-lg-3 col-md-6 col-sm-6">
-                                    <div class="inner-box d-flex justify-content-between align-items-center flex-wrap">
-                                        <div class="image">
-                                            <span class="number">06</span>
-                                            <img src="{{asset('frontend')}}/assets/images/resource/product-6.png" alt="24short-img">
-                                        </div>
-                                        <div class="content">
-                                            <h6><a href="shop-detail.html">Full Sleeve Cotton</a></h6>
-                                            <div class="total-products">(567 Product)</div>
-                                        </div>
-                                    </div>
-                                </div>
-                                
-                                <!-- Product Block Four -->
-                                <div class="product-block-four col-lg-3 col-md-6 col-sm-6">
-                                    <div class="inner-box d-flex justify-content-between align-items-center flex-wrap">
-                                        <div class="image">
-                                            <span class="number">07</span>
-                                            <img src="{{asset('frontend')}}/assets/images/resource/product-7.png" alt="24short-img">
-                                        </div>
-                                        <div class="content">
-                                            <h6><a href="shop-detail.html">Monkey Red Caps</a></h6>
-                                            <div class="total-products">(213 Product)</div>
-                                        </div>
-                                    </div>
-                                </div>
-                                
-                                <!-- Product Block Four -->
-                                <div class="product-block-four col-lg-3 col-md-6 col-sm-6">
-                                    <div class="inner-box d-flex justify-content-between align-items-center flex-wrap">
-                                        <div class="image">
-                                            <span class="number">08</span>
-                                            <img src="{{asset('frontend')}}/assets/images/resource/product-8.png" alt="24short-img">
-                                        </div>
-                                        <div class="content">
-                                            <h6><a href="shop-detail.html">Men,s Cotton Pant</a></h6>
-                                            <div class="total-products">(461 Product)</div>
-                                        </div>
-                                    </div>
-                                </div>
-                                
-                            </div>
-                        </div>
+ 
                         
                     </div>
                     
@@ -700,76 +272,7 @@
         <!-- End Products Section Two -->
         
         <!-- Counter Section -->
-        <section class="counter-section">
-            <div class="auto-container">
-                <div class="inner-container justify-content-between align-items-center">
-                    <!-- Counter Boxed -->
-                    <div class="counter-boxed">
-                        <div class="row clearfix">
-                        
-                            <!-- Counter Column -->
-                            <div class="counter-block col-lg-3 col-md-3 col-sm-3">
-                                <div class="inner-box">
-                                    <div class="counter"><span class="odometer" data-count="49"></span>k</div>
-                                    <h2 class="counter-text">Fashion Product For All</h2>
-                                </div>
-                            </div>
-    
-                            <!-- Counter Column -->
-                            <div class="counter-block col-lg-3 col-md-3 col-sm-3">
-                                <div class="inner-box">
-                                    <div class="counter"><span class="odometer" data-count="37"></span>k</div>
-                                    <h2 class="counter-text">Best Sell For Product</h2>
-                                </div>
-                            </div>
-    
-                            <!-- Counter Column -->
-                            <div class="counter-block col-lg-3 col-md-3 col-sm-3">
-                                <div class="inner-box">
-                                    <div class="counter"><span class="odometer" data-count="2438"></span>k</div>
-                                    <h2 class="counter-text">Totale Sell of Product</h2>
-                                </div>
-                            </div>
-                            
-                            <!-- Counter Column -->
-                            <div class="counter-block col-lg-3 col-md-3 col-sm-3">
-                                <div class="inner-box">
-                                    <div class="counter"><span class="odometer" data-count="940"></span>k</div>
-                                    <h2 class="counter-text">Our Satiesfiyed Clients</h2>
-                                </div>
-                            </div>
-                            
-                        </div>
-                    </div>
-                    <!-- End Counter Boxed -->
-                    
-                </div>
-            </div>
-        </section>
-        <!-- End Counter Section -->
-        
-        <!-- Collection Section -->
-        <section class="collection-section">
-            <div class="auto-container">
-                <div class="inner-container">
-                    <div class="row clearfix">
-                        <div class="title-column col-lg-6 col-md-12 col-sm-12">
-                            <div class="title">2023 Collection</div>
-                            <h2>mens Black Meta Sunglass</h2>
-                            <div class="deals">Deals <span>35% Flat</span></div>
-                            <a class="shop-now" href="shop-detail.html">Shop Now</a>
-                            <!-- Arrow -->
-                            <div class="arrow">
-                                <img src="{{asset('frontend')}}/assets/images/icons/arrow-1.png" alt="24short-img">
-                            </div>
-                        </div>
-                        <div class="image-column col-lg-6 col-md-12 col-sm-12">						
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </section>
-        <!-- End Collection Section -->
+
         
         <!-- Products Section Three -->
         <section class="products-section-three">
@@ -786,270 +289,44 @@
                     <div class="filters">
                         <ul class="filter-tabs">
                             <li class="active filter" data-role="button" data-filter="all">Trending</li>
-                            <li class="filter" data-role="button" data-filter=".bestseller">Best Seller</li>
-                            <li class="filter" data-role="button" data-filter=".music">music</li>
-                            <li class="filter" data-role="button" data-filter=".photography">photography</li>
-                            <li class="filter" data-role="button" data-filter=".sports">sports</li>
+                            @foreach ($category as $item)
+                            <li class="filter" data-role="button" data-filter=".{{$item->id}}">{{$item->name}}</li>
+                            @endforeach
+                           
+                            
                         </ul>
                     </div>
                     
                     <div class="filter-list row clearfix">
                         
-                        <!-- Shop Item -->
-                        <div class="shop-item mix music photography col-lg-3 col-md-6 col-sm-12">
+                        @foreach ($product as $item)
+                        <div class="shop-item mix music {{$item->id}} col-lg-3 col-md-6 col-sm-12">
                             <div class="inner-box">
                                 <div class="image">
-                                    <a href="shop-detail.html"><img src="{{asset('frontend')}}/assets/images/resource/products/17.png" alt="24short-img"></a>
+                                    <a href="shop-detail.html"><img src="{{(!empty($item->logo))?URL::to('storage/'.$item->logo):URL::to('image/no_image.png')}}" alt="24short-img"></a>
                                     <span class="tag flaticon-heart"></span>
-                                    <div class="cart-box text-center">
-                                        <a class="cart" href="#">Add to Cart</a>
-                                    </div>
+                                    
                                 </div>
                                 <div class="lower-content">
-                                    <div class="rating">
-                                        <span class="fa fa-star"></span>
-                                        <span class="fa fa-star"></span>
-                                        <span class="fa fa-star"></span>
-                                        <span class="fa fa-star"></span>
-                                        <span class="light fa fa-star"></span>
-                                    </div>
-                                    <h6><a href="shop-detail.html">masks 95 percent 0.3-μm <br> particles</a></h6>
+                              
+                                    <h6><a href="shop-detail.html">{{$item->name}}</a></h6>
+                                    <b>{{$item->designer->name}}</b>
                                     <div class="d-flex justify-content-between align-items-center">
-                                        <div class="price"><span>$239.52</span> $362.00</div>
+                                        <div class="price">{{$item->price}} </div>
                                         <!-- Quantity Box -->
                                         <div class="quantity-box">
-                                            <div class="item-quantity">
-                                                <input class="qty-spinner" type="text" value="1" name="quantity">
-                                            </div>
+                                
                                         </div>
                                     </div>
                                 </div>
                             </div>
                         </div>
+                        @endforeach
+                        <!-- Shop Item -->
+                      
+           
                         
-                        <!-- Shop Item -->
-                        <div class="shop-item mix sports col-lg-3 col-md-6 col-sm-12">
-                            <div class="inner-box">
-                                <div class="image">
-                                    <a href="shop-detail.html"><img src="{{asset('frontend')}}/assets/images/resource/products/18.png" alt="24short-img"></a>
-                                    <span class="tag flaticon-heart"></span>
-                                    <div class="cart-box text-center">
-                                        <a class="cart" href="#">Add to Cart</a>
-                                    </div>
-                                </div>
-                                <div class="lower-content">
-                                    <div class="rating">
-                                        <span class="fa fa-star"></span>
-                                        <span class="fa fa-star"></span>
-                                        <span class="fa fa-star"></span>
-                                        <span class="fa fa-star"></span>
-                                        <span class="light fa fa-star"></span>
-                                    </div>
-                                    <h6><a href="shop-detail.html">masks 95 percent 0.3-μm <br> particles</a></h6>
-                                    <div class="d-flex justify-content-between align-items-center">
-                                        <div class="price"><span>$239.52</span> $362.00</div>
-                                        <!-- Quantity Box -->
-                                        <div class="quantity-box">
-                                            <div class="item-quantity">
-                                                <input class="qty-spinner" type="text" value="1" name="quantity">
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                        
-                        <!-- Shop Item -->
-                        <div class="shop-item mix photography bestseller col-lg-3 col-md-6 col-sm-12">
-                            <div class="inner-box">
-                                <div class="image">
-                                    <a href="shop-detail.html"><img src="assets/images/resource/products/19.png" alt="24short-img"></a>
-                                    <span class="tag flaticon-heart"></span>
-                                    <div class="cart-box text-center">
-                                        <a class="cart" href="#">Add to Cart</a>
-                                    </div>
-                                </div>
-                                <div class="lower-content">
-                                    <div class="rating">
-                                        <span class="fa fa-star"></span>
-                                        <span class="fa fa-star"></span>
-                                        <span class="fa fa-star"></span>
-                                        <span class="fa fa-star"></span>
-                                        <span class="light fa fa-star"></span>
-                                    </div>
-                                    <h6><a href="shop-detail.html">masks 95 percent 0.3-μm <br> particles</a></h6>
-                                    <div class="d-flex justify-content-between align-items-center">
-                                        <div class="price"><span>$239.52</span> $362.00</div>
-                                        <!-- Quantity Box -->
-                                        <div class="quantity-box">
-                                            <div class="item-quantity">
-                                                <input class="qty-spinner" type="text" value="1" name="quantity">
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                        
-                        <!-- Shop Item -->
-                        <div class="shop-item mix music col-lg-3 col-md-6 col-sm-12">
-                            <div class="inner-box">
-                                <div class="image">
-                                    <a href="shop-detail.html"><img src="{{asset('frontend')}}/assets/images/resource/products/20.png" alt="24short-img"></a>
-                                    <span class="tag flaticon-heart"></span>
-                                    <div class="cart-box text-center">
-                                        <a class="cart" href="#">Add to Cart</a>
-                                    </div>
-                                </div>
-                                <div class="lower-content">
-                                    <div class="rating">
-                                        <span class="fa fa-star"></span>
-                                        <span class="fa fa-star"></span>
-                                        <span class="fa fa-star"></span>
-                                        <span class="fa fa-star"></span>
-                                        <span class="light fa fa-star"></span>
-                                    </div>
-                                    <h6><a href="shop-detail.html">masks 95 percent 0.3-μm <br> particles</a></h6>
-                                    <div class="d-flex justify-content-between align-items-center">
-                                        <div class="price"><span>$239.52</span> $362.00</div>
-                                        <!-- Quantity Box -->
-                                        <div class="quantity-box">
-                                            <div class="item-quantity">
-                                                <input class="qty-spinner" type="text" value="1" name="quantity">
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                        
-                        <!-- Shop Item -->
-                        <div class="shop-item mix sports bestseller col-lg-3 col-md-6 col-sm-12">
-                            <div class="inner-box">
-                                <div class="image">
-                                    <a href="shop-detail.html"><img src="{{asset('frontend')}}/assets/images/resource/products/21.png" alt="24short-img"></a>
-                                    <span class="tag flaticon-heart"></span>
-                                    <div class="cart-box text-center">
-                                        <a class="cart" href="#">Add to Cart</a>
-                                    </div>
-                                </div>
-                                <div class="lower-content">
-                                    <div class="rating">
-                                        <span class="fa fa-star"></span>
-                                        <span class="fa fa-star"></span>
-                                        <span class="fa fa-star"></span>
-                                        <span class="fa fa-star"></span>
-                                        <span class="light fa fa-star"></span>
-                                    </div>
-                                    <h6><a href="shop-detail.html">masks 95 percent 0.3-μm <br> particles</a></h6>
-                                    <div class="d-flex justify-content-between align-items-center">
-                                        <div class="price"><span>$239.52</span> $362.00</div>
-                                        <!-- Quantity Box -->
-                                        <div class="quantity-box">
-                                            <div class="item-quantity">
-                                                <input class="qty-spinner" type="text" value="1" name="quantity">
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                        
-                        <!-- Shop Item -->
-                        <div class="shop-item mix music photography col-lg-3 col-md-6 col-sm-12">
-                            <div class="inner-box">
-                                <div class="image">
-                                    <a href="shop-detail.html"><img src="{{asset('frontend')}}/assets/images/resource/products/22.png" alt="24short-img"></a>
-                                    <span class="tag flaticon-heart"></span>
-                                    <div class="cart-box text-center">
-                                        <a class="cart" href="#">Add to Cart</a>
-                                    </div>
-                                </div>
-                                <div class="lower-content">
-                                    <div class="rating">
-                                        <span class="fa fa-star"></span>
-                                        <span class="fa fa-star"></span>
-                                        <span class="fa fa-star"></span>
-                                        <span class="fa fa-star"></span>
-                                        <span class="light fa fa-star"></span>
-                                    </div>
-                                    <h6><a href="shop-detail.html">masks 95 percent 0.3-μm <br> particles</a></h6>
-                                    <div class="d-flex justify-content-between align-items-center">
-                                        <div class="price"><span>$239.52</span> $362.00</div>
-                                        <!-- Quantity Box -->
-                                        <div class="quantity-box">
-                                            <div class="item-quantity">
-                                                <input class="qty-spinner" type="text" value="1" name="quantity">
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                        
-                        <!-- Shop Item -->
-                        <div class="shop-item mix sports bestseller col-lg-3 col-md-6 col-sm-12">
-                            <div class="inner-box">
-                                <div class="image">
-                                    <a href="shop-detail.html"><img src="{{asset('frontend')}}/assets/images/resource/products/23.png" alt="24short-img"></a>
-                                    <span class="tag flaticon-heart"></span>
-                                    <div class="cart-box text-center">
-                                        <a class="cart" href="#">Add to Cart</a>
-                                    </div>
-                                </div>
-                                <div class="lower-content">
-                                    <div class="rating">
-                                        <span class="fa fa-star"></span>
-                                        <span class="fa fa-star"></span>
-                                        <span class="fa fa-star"></span>
-                                        <span class="fa fa-star"></span>
-                                        <span class="light fa fa-star"></span>
-                                    </div>
-                                    <h6><a href="shop-detail.html">masks 95 percent 0.3-μm <br> particles</a></h6>
-                                    <div class="d-flex justify-content-between align-items-center">
-                                        <div class="price"><span>$239.52</span> $362.00</div>
-                                        <!-- Quantity Box -->
-                                        <div class="quantity-box">
-                                            <div class="item-quantity">
-                                                <input class="qty-spinner" type="text" value="1" name="quantity">
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                        
-                        <!-- Shop Item -->
-                        <div class="shop-item mix music photography col-lg-3 col-md-6 col-sm-12">
-                            <div class="inner-box">
-                                <div class="image">
-                                    <a href="shop-detail.html"><img src="{{asset('frontend')}}/assets/images/resource/products/24.png" alt="24short-img"></a>
-                                    <span class="tag flaticon-heart"></span>
-                                    <div class="cart-box text-center">
-                                        <a class="cart" href="#">Add to Cart</a>
-                                    </div>
-                                </div>
-                                <div class="lower-content">
-                                    <div class="rating">
-                                        <span class="fa fa-star"></span>
-                                        <span class="fa fa-star"></span>
-                                        <span class="fa fa-star"></span>
-                                        <span class="fa fa-star"></span>
-                                        <span class="light fa fa-star"></span>
-                                    </div>
-                                    <h6><a href="shop-detail.html">masks 95 percent 0.3-μm <br> particles</a></h6>
-                                    <div class="d-flex justify-content-between align-items-center">
-                                        <div class="price"><span>$239.52</span> $362.00</div>
-                                        <!-- Quantity Box -->
-                                        <div class="quantity-box">
-                                            <div class="item-quantity">
-                                                <input class="qty-spinner" type="text" value="1" name="quantity">
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
+          
                         
                     </div>
                     
