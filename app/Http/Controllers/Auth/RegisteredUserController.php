@@ -12,7 +12,7 @@ use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Hash;
 use Illuminate\Validation\Rules;
 use Illuminate\View\View;
-
+use Image;
 class RegisteredUserController extends Controller
 {
     /**
@@ -42,7 +42,9 @@ class RegisteredUserController extends Controller
             'max_price' => 'numeric',
             'min_price' => 'numeric'
         ]);
-        
+        if ($request->hasFile('logo')) {
+            $this->_uploadImage($request, $user);
+        }
         $user = User::create([
             'name' => $request->name,
             'email' => $request->email,
@@ -50,7 +52,7 @@ class RegisteredUserController extends Controller
             'role' => $request->role,
             'gender' => $request->gender,
             'mobile' => $request->mobile,
-            'logo' => $request->logo,
+            //'logo' => $request->logo,
             'age' => $request->age,
             'experience' => $request->experience,
             'expertise' => $request->expertise,
@@ -68,5 +70,18 @@ class RegisteredUserController extends Controller
         Auth::login($user);
 
         return redirect(RouteServiceProvider::HOME);
+    }
+
+    private function _uploadImage($request, $user)
+    {
+        # code...
+        if( $request->hasFile('logo') ) {
+            $image = $request->file('logo');
+            $filename = time() . '.' . $image->getClientOriginalExtension();
+            Image::make($image)->resize(320, 268)->save('storage/' . $filename);
+            $user->logo = $filename;
+            $user->save();
+        }
+       
     }
 }

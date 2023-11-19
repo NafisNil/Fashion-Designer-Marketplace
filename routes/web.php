@@ -4,8 +4,10 @@ use App\Http\Controllers\ProfileController;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\PreferController;
 use App\Http\Controllers\ContactController;
+use App\Http\Controllers\HomeController;
 use App\Http\Controllers\LogoController;
 use App\Http\Controllers\FrontendController;
+use App\Http\Controllers\DesignerController;
 use App\Http\Controllers\AboutController;
 use App\Http\Middleware\AdminMiddleware;
 use App\Http\Middleware\UserMiddleware;
@@ -22,6 +24,17 @@ use App\Http\Middleware\UserMiddleware;
 
 Route::get('/',[FrontendController::class, 'index'])->name('index');
 Route::get('/about-us',[FrontendController::class, 'about'])->name('about_us');
+
+//admin
+Route::get('/all-designer',[HomeController::class, 'all_designer'])->name('all_designer');
+Route::get('/designer/{designer}/edit ',[HomeController::class, 'designer_update'])->name('designer.edit');
+Route::delete('/designer/{designer}',[HomeController::class, 'designer_destroy'])->name('designer.destroy');
+Route::put('/designer/{designer} ',[HomeController::class, 'designer_update_store'])->name('designer.update');
+
+//admin
+
+
+
 //user
 Route::get('/user-register',[FrontendController::class, 'user_register'])->name('user_register');
 Route::get('/user-login',[FrontendController::class, 'user_login'])->name('user_login');

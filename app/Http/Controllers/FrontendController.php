@@ -74,7 +74,18 @@ class FrontendController extends Controller
         return view('frontend.designer.register', $data);
     }
 
+    public function designer_login(){
+        $data['contact'] = Contact::first();
+        $data['logo'] = Logo::first();
+        $data['prefer'] = Prefer::latest()->get();
+        return view('frontend.designer.register', $data);
+    }
+
     /* designer login */
+
+    public function designer_profile_update(Request $request){
+        
+    }
 
 
     public function about(){

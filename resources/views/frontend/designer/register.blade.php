@@ -195,7 +195,7 @@
                                  @if(Session::has('error'))
                                  <div class="alert alert-danger">{{Session::get('error')}}</div>
                               @endif
-                                <form method="post" action="{{route('user_login_store')}}">
+                                <form method="post" action="{{route('login')}}">
                                     @csrf
                                     <div class="form-group">
                                         <label>Email address</label>

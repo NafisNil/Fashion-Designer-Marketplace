@@ -99,6 +99,15 @@
               </p>
             </a>
           </li>
+          <li class="nav-item">
+            <a href="{{route('all_designer')}}" class="nav-link {{$route == 'all_designer'?'active':''}}">
+              <i class="nav-icon fas fa-th"></i>
+              <p>
+                All Designer
+                
+              </p>
+            </a>
+          </li>
           @elseif(Auth::user()->role == 'user')
               
           @endif
