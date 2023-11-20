@@ -142,12 +142,16 @@
                 <div class="sec-title">
                     <h2><span>Populer</span> Designers For You !</h2>
                 </div>
+             
                 <div class="four-item-carousel owl-carousel owl-theme">
                     @foreach ($designer as $item)
+                    @php
+                    $products= App\Models\Product::select('logo')->where('designer_id', $item->id)->first();
+                @endphp
                     <div class="shop-item">
                         <div class="inner-box">
                             <div class="image">
-                                <a href="{{route('designer.single', $item->id)}}"><img src="{{(!empty($item->logo))?URL::to('storage/'.$item->logo):URL::to('image/no_image.png')}}" alt="24short-img"></a>
+                                <a href="{{route('designer.single', $item->id)}}"><img src="{{(!empty($products->logo))?URL::to('storage/'.$products->logo):URL::to('image/no_image.png')}}" alt="24short-img"></a>
                                 
                               
                             </div>

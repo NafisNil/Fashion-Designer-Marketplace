@@ -48,12 +48,15 @@
                         
                         <div class="shops-outer">
                             <div class="row clearfix">
-                                
+                              
                                 @foreach ($designer as $item)
+                                @php
+                                $product= App\Models\Product::select('logo')->where('designer_id', $item->id)->first();
+                            @endphp
                                 <div class="shop-item col-lg-4 col-md-4 col-sm-12">
                                     <div class="inner-box">
                                         <div class="image">
-                                            <a href="{{route('designer.single', $item->id)}}"><img src="{{(!empty($item->logo))?URL::to('storage/'.$item->logo):URL::to('image/no_image.png')}}" alt="24short-img"></a>
+                                            <a href="{{route('designer.single', $item->id)}}"><img src="{{(!empty($product->logo))?URL::to('storage/'.$product->logo):URL::to('image/no_image.png')}}" alt="24short-img"></a>
                                             <div class="options-box">
                                              <!--   <ul class="option-list">
                                                     <li><a class="flaticon-resize" href="shop-detail.html"></a></li>
@@ -89,11 +92,7 @@
                         
                             <!-- Styled Pagination -->
                             <ul class="styled-pagination text-center">
-                                <li class="next"><a href="#"><span class="fa fa-angle-double-left"></span></a></li>
-                                <li><a href="#" class="active">1</a></li>
-                                <li><a href="#">2</a></li>
-                                <li><a href="#">3</a></li>
-                                <li class="next"><a href="#"><span class="fa fa-angle-double-right"></span></a></li>
+                               {{$designer->links()}}
                             </ul>
                             <!-- End Styled Pagination -->
                         
