@@ -57,7 +57,7 @@
                     <td>{{$item->email}}</td>
                     <td> {{$item->mobile}}</td>
                     <td>{{$item->age}}</td>
-                    <td><img src="{{(!empty($item->logo))?URL::to('storage/'.$item->logo):URL::to('image/no_image.png')}}" alt=""></td>
+                    <td><img src="{{(!empty($item->logo))?URL::to('storage/'.$item->logo):URL::to('image/no_image.png')}}" alt="" style="max-height: 150px"></td>
                     <td> {{$item->max_price}}</td>
                     <td>{{$item->min_price}}</td>
                     <td>
@@ -68,9 +68,9 @@
                       @endif
                     </td>
                     <td>
-                        {{--<a href="{{route('designer.edit',[$item])}}"><button class="btn btn-outline-info btn-sm"><i class="fas fa-pen-square"></i></button></a>
+                        <a href="{{route('designer.admin.edit',[$item->id])}}"><button class="btn btn-outline-info btn-sm"><i class="fas fa-pen-square"></i></button></a>
                     
-                        <form action="{{route('designer.destroy',[$item])}}" method="POST">
+                        {{--     <form action="{{route('designer.destroy',[$item])}}" method="POST">
                           @method('DELETE')
                           @csrf
                           <button class="btn btn-outline-danger btn-sm"><i class="fas fa-trash"></i></button>

@@ -149,6 +149,16 @@
           </li>
 
           <li class="nav-item">
+            <a href="{{route('designer.info.edit')}}" class="nav-link {{$route == '  designer.info.edit'?'active':''}}">
+              <i class="nav-icon fas fa-th"></i>
+              <p>
+               Update information
+                
+              </p>
+            </a>
+          </li>
+        
+          <li class="nav-item">
             <a href="{{route('product.index')}}" class="nav-link {{$route == 'product.index'?'active':''}}">
               <i class="nav-icon fas fa-th"></i>
               <p>

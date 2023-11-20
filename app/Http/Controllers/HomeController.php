@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Models\User;
+use App\Models\Prefer;
 use Auth;
 use Image;
 class HomeController extends Controller
@@ -56,5 +57,26 @@ class HomeController extends Controller
         }
        
     }    
+
+
+    //designer
+
+    public function designer_admin_edit($id){
+        $user = user::find($id);
+        $prefer = Prefer::all();
+        return view('backend.admin.designer_edit', ['edit' => $user, 'prefer' => $prefer]);
+    }
+
+    public function designer_admin_update(Request $request, $id){
+        $user = User::find($id);
+        $user->update($request->all());
+        if ($request->hasFile('logo')) {
+            @unlink('storage/'.$user->logo);
+            $this->_uploadImage($request, $user);
+        }
+         return redirect()->back()->with('success', 'Profile Update successfully!');
+    }
+
+    
 
 }

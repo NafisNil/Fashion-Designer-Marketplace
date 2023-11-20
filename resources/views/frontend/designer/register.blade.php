@@ -91,10 +91,10 @@
 
                                      <!-- location -->
                                      <div class="mt-4">
-                                        <x-input-label for="mobile" :value="__('Location')" />
+                                        <x-input-label for="mobile" :value="__('Description')" />
                                         
-                                        <textarea name="location" id="" cols="30" rows="10" class="block mt-1 w-full" ></textarea>
-                                        <x-input-error :messages="$errors->get('location')" class="mt-2" />
+                                        <textarea name="description" id="" cols="30" rows="10" class="block mt-1 w-full" ></textarea>
+                                        <x-input-error :messages="$errors->get('description')" class="mt-2" />
                                     </div>
 
                                     <!-- experience -->
@@ -124,7 +124,7 @@
                                             </label>
                                           </div>
                                         @endforeach
-                                        <x-input-error :messages="$errors->get('location')" class="mt-2" />
+                                        <x-input-error :messages="$errors->get('preferred_type')" class="mt-2" />
                                     </div>
 
                                       <!-- max price -->

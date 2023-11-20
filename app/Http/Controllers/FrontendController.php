@@ -26,7 +26,7 @@ class FrontendController extends Controller
         $data['partner'] = Partner::latest()->get();
         $data['slider'] = Slider::latest()->get();
         $data['product'] = Product::latest()->get();
-        $data['designer'] = User::where('role','designer')->limit(10)->get();
+        $data['designer'] = User::where('role','designer')->where('approve', 1)->limit(10)->get();
         return view('frontend.index', $data);
     }
 

@@ -30,16 +30,9 @@ Route::get('/',[FrontendController::class, 'index'])->name('index');
 Route::get('/about-us',[FrontendController::class, 'about'])->name('about_us');
 
 //admin
-Route::get('/all-designer',[HomeController::class, 'all_designer'])->name('all_designer');
-Route::get('/designer_edit',[HomeController::class, 'designer_edit'])->name('designer.edit');
-Route::delete('/designer/{designer}',[HomeController::class, 'designer_destroy'])->name('designer.destroy');
-Route::put('/designer-update',[HomeController::class, 'designer_update'])->name('designer.update');
-Route::resources([
-    'product' => ProductController::class
-]);
 
-Route::get('/designer-approve/{id}',[HomeController::class, 'approve_designer'])->name('approve_designer');
-Route::get('/designer-disapprove/{id}',[HomeController::class, 'disapprove_designer'])->name('disapprove_designer');
+
+
 //admin
 
 
@@ -64,7 +57,13 @@ Route::middleware(['auth','admin'])->group(function () {
     Route::get('/profile', [ProfileController::class, 'edit'])->name('profile.edit');
     Route::patch('/profile', [ProfileController::class, 'update'])->name('profile.update');
     Route::delete('/profile', [ProfileController::class, 'destroy'])->name('profile.destroy');
-
+    Route::get('/designer-approve/{id}',[HomeController::class, 'approve_designer'])->name('approve_designer');
+    Route::get('/designer-disapprove/{id}',[HomeController::class, 'disapprove_designer'])->name('disapprove_designer');
+    //designer
+    Route::get('/designer_admin_edit/{id}',[HomeController::class, 'designer_admin_edit'])->name('designer.admin.edit');
+    Route::delete('/designer_admin/{id}',[HomeController::class, 'designer_admin_destroy'])->name('designer.admin.destroy');
+    Route::put('/designer_admin_update/{id}',[HomeController::class, 'designer_admin_update'])->name('designer.admin.update');
+    //designer
     Route::resources([
         'prefer' => PreferController::class,
         'contact' => ContactController::class,
@@ -76,6 +75,26 @@ Route::middleware(['auth','admin'])->group(function () {
      
     ]);
 });
+
+
+
+Route::middleware('auth')->group(function () {
+    Route::get('/all-designer',[HomeController::class, 'all_designer'])->name('all_designer');
+    Route::get('/designer_edit',[HomeController::class, 'designer_edit'])->name('designer.edit');
+    Route::delete('/designer/{designer}',[HomeController::class, 'designer_destroy'])->name('designer.destroy');
+    Route::put('/designer-update',[HomeController::class, 'designer_update'])->name('designer.update');
+
+    //designer_profile_update
+    Route::get('/designer_info_edit',[DesignerController::class, 'designer_info_edit'])->name('designer.info.edit');
+    Route::delete('/designer_info/{designer}',[DesignerController::class, 'designer_info_destroy'])->name('designer.info.destroy');
+    Route::put('/designer_info_update',[DesignerController::class, 'designer_info_update'])->name('designer.info.update');
+
+
+    Route::resources([
+        'product' => ProductController::class
+    ]);
+});
+
 
 
 require __DIR__.'/auth.php';
