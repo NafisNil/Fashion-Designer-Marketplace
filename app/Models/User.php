@@ -38,6 +38,12 @@ class User extends Authenticatable
         'remember_token',
     ];
 
+    public function prefer()
+    {
+        # code...
+        return $this->belongsTo(Prefer::class, 'preferred_type','id');
+    }
+
     /**
      * The attributes that should be cast.
      *

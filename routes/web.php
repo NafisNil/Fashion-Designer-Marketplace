@@ -28,6 +28,7 @@ use App\Http\Middleware\UserMiddleware;
 
 Route::get('/',[FrontendController::class, 'index'])->name('index');
 Route::get('/about-us',[FrontendController::class, 'about'])->name('about_us');
+Route::get('/designer-single/{id}',[FrontendController::class, 'single_designer'])->name('designer.single');
 
 //admin
 
@@ -59,6 +60,8 @@ Route::middleware(['auth','admin'])->group(function () {
     Route::delete('/profile', [ProfileController::class, 'destroy'])->name('profile.destroy');
     Route::get('/designer-approve/{id}',[HomeController::class, 'approve_designer'])->name('approve_designer');
     Route::get('/designer-disapprove/{id}',[HomeController::class, 'disapprove_designer'])->name('disapprove_designer');
+    Route::get('/product_all', [ProductController::class, 'all_product'])->name('product.all.index');
+
     //designer
     Route::get('/designer_admin_edit/{id}',[HomeController::class, 'designer_admin_edit'])->name('designer.admin.edit');
     Route::delete('/designer_admin/{id}',[HomeController::class, 'designer_admin_destroy'])->name('designer.admin.destroy');

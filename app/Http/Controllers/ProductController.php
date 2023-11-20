@@ -23,6 +23,16 @@ class ProductController extends Controller
          return view('backend.product.index',['product'=>$product,'productCount'=> $productCount,]);
     }
 
+    public function all_product(){
+        $product = Product::orderBy('id', 'desc')->get();
+        $productCount = Product::count();
+         return view('backend.product.index',['product'=>$product,'productCount'=> $productCount,]);
+    }
+
+    
+
+
+
     /**
      * Show the form for creating a new resource.
      *

@@ -147,13 +147,13 @@
                     <div class="shop-item">
                         <div class="inner-box">
                             <div class="image">
-                                <a href="shop-detail.html"><img src="{{(!empty($item->logo))?URL::to('storage/'.$item->logo):URL::to('image/no_image.png')}}" alt="24short-img"></a>
+                                <a href="{{route('designer.single', $item->id)}}"><img src="{{(!empty($item->logo))?URL::to('storage/'.$item->logo):URL::to('image/no_image.png')}}" alt="24short-img"></a>
                                 
                               
                             </div>
                             <div class="lower-content">
                         
-                                <h6><a href="shop-detail.html">{{$item->name}}</a></h6>
+                                <h6><a href="{{route('designer.single', $item->id)}}">{{$item->name}}</a></h6>
                                 <div class="d-flex justify-content-between align-items-center">
                                     <div class="price">{{$item->min_price}} Tk -  {{$item->max_price}} Tk</div>
                  
@@ -249,7 +249,7 @@
                                                 <img src="{{(!empty($item->logo))?URL::to('storage/'.$item->logo):URL::to('image/no_image.png')}}" alt="24short-img">
                                             </div>
                                             <div class="content">
-                                                <h6><a href="shop-detail.html">{{$item->name}}</a></h6>
+                                                <h6><a href="{{route('designer.single', $item->id)}}">{{$item->name}}</a></h6>
                                                 <div class="total-products">(312 Product)</div>
                                             </div>
                                         </div>

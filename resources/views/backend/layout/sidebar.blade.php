@@ -120,6 +120,16 @@
           </li>
 
           <li class="nav-item">
+            <a href="{{route('product.all.index')}}" class="nav-link {{$route == 'product.all.index'?'active':''}}">
+              <i class="nav-icon fas fa-th"></i>
+              <p>
+                Product 
+                
+              </p>
+            </a>
+          </li>
+
+          <li class="nav-item">
             <a href="{{route('slider.index')}}" class="nav-link {{$route == 'slider.index'?'active':''}}">
               <i class="nav-icon fas fa-th"></i>
               <p>

@@ -91,6 +91,13 @@ class FrontendController extends Controller
         return view('frontend.designer.register', $data);
     }
 
+    public function single_designer($id){
+        $data['contact'] = Contact::first();
+        $data['logo'] = Logo::first();
+        $data['designer'] = User::where('id', $id)->first();
+        return view('frontend.designer.single_designer', $data );
+    }
+
     /* designer login */
 
    
