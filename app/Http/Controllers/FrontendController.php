@@ -109,4 +109,12 @@ class FrontendController extends Controller
         $data['about'] = About::first();
         return view('frontend.about', $data);
     }
+
+    public function shop(){
+        $data['contact'] = Contact::first();
+        $data['logo'] = Logo::first();
+        $data['designer'] = User::where('role','designer')->where('approve', 1)->latest()->get();
+        $data['category'] = Category::all();
+        return view('frontend.designer.shop', $data);
+    }
 }

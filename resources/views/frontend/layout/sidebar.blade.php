@@ -16,7 +16,7 @@
                                   <h6>Our Services</h6>
                                   <ul class="sidebar-services-list">
                                       <li><a href="contact.html">Contact us</a></li>
-                                      <li><a href="shop.html">Our Products</a></li>
+                                      <li><a href="{{route('shop')}}">Our Products</a></li>
                                       <li><a href="shop-detail.html">Product Single</a></li>
                                       <li><a href="checkout.html">CheckOut</a></li>
                                       <li><a href="register.html">Register</a></li>

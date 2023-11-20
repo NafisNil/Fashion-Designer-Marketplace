@@ -53,15 +53,8 @@
                                     </li>
                                     </ul>
                                 </li>
-                                <li class="dropdown"><a href="#">Shop</a>
-                                    <ul>
-                                        <li><a href="shop.html">Our Products</a></li>
-                                        <li><a href="shop-detail.html">Product Single</a></li>
-                                        <li><a href="cart.html">Shoping Cart</a></li>
-                                        <li><a href="checkout.html">CheckOut</a></li>
-                                        <li><a href="my-account.html">My Account</a></li>
-                                        <li><a href="wishlist.html">WhistList</a></li>								
-                                    </ul>
+                                <li class=""><a href="{{route('shop')}}">Shop</a>
+                       
                                 </li>
                                 <li class="dropdown"><a href="#">Our Collection</a>
                                     <ul>

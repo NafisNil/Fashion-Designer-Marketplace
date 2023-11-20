@@ -28,6 +28,7 @@ use App\Http\Middleware\UserMiddleware;
 
 Route::get('/',[FrontendController::class, 'index'])->name('index');
 Route::get('/about-us',[FrontendController::class, 'about'])->name('about_us');
+Route::get('/shop-page',[FrontendController::class, 'shop'])->name('shop');
 Route::get('/designer-single/{id}',[FrontendController::class, 'single_designer'])->name('designer.single');
 
 //admin
