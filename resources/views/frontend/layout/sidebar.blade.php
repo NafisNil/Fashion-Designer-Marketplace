@@ -15,7 +15,7 @@
                                   
                                   <h6>Our Services</h6>
                                   <ul class="sidebar-services-list">
-                                      <li><a href="contact.html">Contact us</a></li>
+                                      <li><a href="{{route('contact_us')}}">Contact us</a></li>
                                       <li><a href="{{route('shop')}}">Our Products</a></li>
                                       <li><a href="shop-detail.html">Product Single</a></li>
                                       <li><a href="checkout.html">CheckOut</a></li>
@@ -30,17 +30,17 @@
                                       <li>
                                           <span class="icon flaticon-maps-and-flags"></span>
                                           <strong>Our office</strong>
-                                          5331 Rexford Court, <br> Montgomery AL 36116, Australia.
+                                          {!!$contact->address!!}
                                       </li>
                                       <li>
                                           <span class="icon flaticon-call-1"></span>
                                           <strong>Phone</strong>
-                                          <a href="tel:+00-999-999-9999">+(00) 999 999 9999</a><br>
+                                          <a href="tel:{{$contact->phone}}">{{$contact->phone}}</a><br>
                                       </li>
                                       <li>
                                           <span class="icon flaticon-mail"></span>
                                           <strong>Email</strong>
-                                          <a href="mailto:contact@24shotphoto.com">contact@24shotphoto.com</a>
+                                          <a href="mailto:{{$contact->email}}">{{$contact->email}}</a>
                                       </li>
                                   </ul>
                               </div>							

@@ -117,4 +117,10 @@ class FrontendController extends Controller
         $data['category'] = Category::all();
         return view('frontend.designer.shop', $data);
     }
+
+    public function contact(){
+        $data['contact'] = Contact::first();
+        $data['logo'] = Logo::first();
+        return view('frontend.contact', $data);
+    }
 }
