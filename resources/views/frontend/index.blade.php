@@ -155,7 +155,7 @@
                         
                                 <h6><a href="shop-detail.html">{{$item->name}}</a></h6>
                                 <div class="d-flex justify-content-between align-items-center">
-                                    <div class="price">{{$item->min_price}} -  {{$item->max_price}}</div>
+                                    <div class="price">{{$item->min_price}} Tk -  {{$item->max_price}} Tk</div>
                  
                                 </div>
                             </div>
@@ -246,7 +246,7 @@
                                         <div class="inner-box d-flex justify-content-between align-items-center flex-wrap">
                                             <div class="image">
                                                 <span class="number">{{++$key}}</span>
-                                                <img src="{{asset('frontend')}}/assets/images/resource/product-1.png" alt="24short-img">
+                                                <img src="{{(!empty($item->logo))?URL::to('storage/'.$item->logo):URL::to('image/no_image.png')}}" alt="24short-img">
                                             </div>
                                             <div class="content">
                                                 <h6><a href="shop-detail.html">{{$item->name}}</a></h6>
@@ -312,7 +312,7 @@
                                     <h6><a href="shop-detail.html">{{$item->name}}</a></h6>
                                     <b>{{$item->designer->name}}</b>
                                     <div class="d-flex justify-content-between align-items-center">
-                                        <div class="price">{{$item->price}} </div>
+                                        <div class="price">{{$item->designer->min_price}} -  {{$item->designer->max_price}}</div>
                                         <!-- Quantity Box -->
                                         <div class="quantity-box">
                                 

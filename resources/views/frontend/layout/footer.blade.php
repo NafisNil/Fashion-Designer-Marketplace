@@ -14,10 +14,10 @@
                         <div class="footer-column col-lg-7 col-md-6 col-sm-12">
                             <div class="footer-widget links-widget">
                                 <!-- Logo -->
-                                <div class="logo"><a href="index.html"><img src="{{asset('frontend')}}/assets/images/footer-logo.png" alt="logo"></a></div>
+                                <div class="logo"><a href="{{route('index')}}"><img src="{{(!empty($logo->logo))?URL::to('storage/'.$logo->logo):URL::to('image/no_image.png')}}" alt="logo" style="max-width: 243px;max-height:72px"></a></div>
                                 <div class="text">{!!$contact->address!!}</div>
                                 <ul class="contact-list">
-                                   
+            
                                     <li><span class="icon flaticon-call"></span>{{$contact->phone}}</li>
                                 </ul>
                             </div>

@@ -14,8 +14,8 @@
 <meta name="viewport" content="width=device-width,initial-scale=1.0">
 
 <!-- Favicons Icon -->
-<link rel="shortcut icon" href="{{asset('frontend')}}/assets/images/favicon.png" type="image/x-icon">
-<link rel="icon" href="{{asset('frontend')}}/assets/images/favicon.png" type="image/x-icon">
+<link rel="shortcut icon" href="{{(!empty($logo->logo))?URL::to('storage/'.$logo->logo):URL::to('image/no_image.png')}}" type="image/x-icon">
+<link rel="icon" href="{{(!empty($logo->logo))?URL::to('storage/'.$logo->logo):URL::to('image/no_image.png')}}" type="image/x-icon">
 
 <!-- Stylesheets -->
 <link href="{{asset('frontend')}}/assets/css/bootstrap.css" rel="stylesheet">

@@ -141,7 +141,7 @@
             <div class="d-flex justify-content-between align-items-center">
                 <!-- Logo -->
                 <div class="logo">
-                    <a href="{{route('index')}}" title=""><img src="{{asset('frontend')}}/assets/images/logo-small.png" alt="logo"></a>
+                    <a href="{{route('index')}}" title=""><img src="{{(!empty($logo->logo))?URL::to('storage/'.$logo->logo):URL::to('image/no_image.png')}}" alt="logo" style="max-height: 60px;max-width:130px"></a>
                 </div>
                 
                 <!-- Right Col -->
