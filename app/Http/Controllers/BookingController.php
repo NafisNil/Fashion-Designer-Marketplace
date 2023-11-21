@@ -4,7 +4,10 @@ namespace App\Http\Controllers;
 
 use App\Models\Booking;
 use Illuminate\Http\Request;
-
+use App\Models\User;
+use App\Models\Contact;
+use App\Models\Logo;
+use App\Http\Requests\BookingRequest;
 class BookingController extends Controller
 {
     /**
@@ -15,6 +18,15 @@ class BookingController extends Controller
     public function index()
     {
         //
+        $booking = Booking::latest()->paginate(30);
+        return view('backend.booking.index', compact('booking'));
+    }
+
+    public function booking_page($id){
+        $data['designer'] = User::find($id);
+        $data['contact'] = Contact::first();
+        $data['logo'] = Logo::first();
+        return view('frontend.user.booking', $data);
     }
 
     /**
@@ -33,9 +45,12 @@ class BookingController extends Controller
      * @param  \Illuminate\Http\Request  $request
      * @return \Illuminate\Http\Response
      */
-    public function store(Request $request)
+    public function store(BookingRequest $request)
     {
         //
+        $booking = Booking::create($request->all());
+
+        return redirect()->back()->with('success',' Your appointment has been booked!');
     }
 
     /**

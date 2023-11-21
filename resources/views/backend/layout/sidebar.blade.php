@@ -147,6 +147,16 @@
               </p>
             </a>
           </li>
+
+          <li class="nav-item">
+            <a href="{{route('booking.index')}}" class="nav-link {{$route == 'booking.index'?'active':''}}">
+              <i class="nav-icon fas fa-th"></i>
+              <p>
+                Appointment 
+                
+              </p>
+            </a>
+          </li>
           @elseif(Auth::user()->role == 'designer')
           <li class="nav-item">
             <a href="{{route('designer.edit')}}" class="nav-link {{$route == 'designer.edit'?'active':''}}">

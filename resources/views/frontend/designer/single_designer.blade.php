@@ -106,7 +106,7 @@
 							
 								<!-- Button Box -->
 								<div class="button-box">
-									<a href="shop.html" class="theme-btn btn-style-one">
+									<a href="{{route('booking.designer', $designer->id)}}" class="theme-btn btn-style-one">
 										Book Now
 									</a>
 								</div>

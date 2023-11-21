@@ -13,6 +13,7 @@ use App\Http\Controllers\ProductController;
 use App\Http\Controllers\AboutController;
 use App\Http\Controllers\CategoryController;
 use App\Http\Controllers\PartnerController;
+use App\Http\Controllers\BookingController;
 use App\Http\Middleware\AdminMiddleware;
 use App\Http\Middleware\UserMiddleware;
 /*
@@ -37,6 +38,9 @@ Route::get('/designer-single/{id}',[FrontendController::class, 'single_designer'
 
 
 //admin
+
+//booking
+Route::get('/booking-designer/{id}',[BookingController::class, 'booking_page'])->name('booking.designer');
 
 
 
@@ -77,7 +81,7 @@ Route::middleware(['auth','admin'])->group(function () {
         'category' => CategoryController::class,
         'partner' => PartnerController::class,
         'slider' => SliderController::class,
-     
+        'booking' => BookingController::class
     ]);
 });
 
