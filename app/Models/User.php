@@ -25,7 +25,7 @@ class User extends Authenticatable
         'gender',
         'mobile',
         'logo',
-        'age','experience','preferred_type','expertise', 'max_price', 'min_price', 'approve'
+        'age','experience','preferred_type','expertise', 'max_price', 'min_price', 'approve', 'sales_quantity'
     ];
 
     /**

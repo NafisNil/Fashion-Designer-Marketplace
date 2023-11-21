@@ -254,7 +254,14 @@
                                             </div>
                                             <div class="content">
                                                 <h6><a href="{{route('designer.single', $item->id)}}">{{$item->name}}</a></h6>
-                                                <div class="total-products">(312 Product)</div>
+                                                <div class="total-products">
+                                                    @if ($item->sales_quantity > 0)
+                                                    ({{$item->sales_quantity}} Products)
+                                                    @else
+                                                    ({{$item->sales_quantity}} Product)
+                                                    @endif
+                                                    
+                                                </div>
                                             </div>
                                         </div>
                                     </div>

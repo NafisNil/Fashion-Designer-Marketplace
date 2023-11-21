@@ -33,7 +33,7 @@
                                 <div class="swiper-container content-carousel">
                                     <div class="swiper-wrapper">
                                         <div class="swiper-slide">
-                                            <figure class="image"><a href="{{(!empty($designer->logo))?URL::to('storage/'.$designer->logo):URL::to('image/no_image.png')}}" class="lightbox-image"><img src="{{(!empty($designer->logo))?URL::to('storage/'.$designer->logo):URL::to('image/no_image.png')}}" alt="" style="max-height: 673px;max-width:518px"></a></figure>
+                                            <figure class="image"><a href="{{(!empty($product[0]->logo))?URL::to('storage/'.$product[0]->logo):URL::to('image/no_image.png')}}" class="lightbox-image"><img src="{{(!empty($product[0]->logo))?URL::to('storage/'.$product[0]->logo):URL::to('image/no_image.png')}}" alt="" style="max-height: 673px;max-width:518px"></a></figure>
                                         </div>
                                         @foreach ($product as $item)
                                         <div class="swiper-slide">
@@ -45,10 +45,7 @@
 
                                 <div class="swiper-container thumbs-carousel">
                                     <div class="swiper-wrapper">
-                                    	<div class="swiper-slide">
-                                            <figure class="thumb"><img src="{{(!empty($designer->logo))?URL::to('storage/'.$designer->logo):URL::to('image/no_image.png')}}" alt=""></figure>
-                                        </div>
-                         
+                               
                                      @foreach ($product as $item)
                                         <div class="swiper-slide">
                                             <figure class="thumb"><img src="{{(!empty($item->logo))?URL::to('storage/'.$item->logo):URL::to('image/no_image.png')}}" alt=""></figure>

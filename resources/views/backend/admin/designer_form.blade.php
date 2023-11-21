@@ -82,6 +82,12 @@
       </div>
 
       <div class="form-group">
+        <label for="exampleInputEmail1">Sales Quantity <span style="color:red" >*</span></label>
+       
+        <input type="text" class="form-control" name="sales_quantity" value="{!!old('sales_quantity',@$edit->sales_quantity)!!}">
+       
+      </div>
+      <div class="form-group">
         <label for="exampleInputEmail1">Password <span style="color:red" >*</span></label>
        
         <input type="password" class="form-control" name="password" value="{{@$edit->password}}" readonly>

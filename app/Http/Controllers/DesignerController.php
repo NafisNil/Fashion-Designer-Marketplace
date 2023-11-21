@@ -44,6 +44,7 @@ class DesignerController extends Controller
             'preferred_type' => $request->preferred_type,
             'max_price' => $request->max_price,
             'min_price' => $request->min_price,
+            'sales_quantity' => $request->sales_quantity,
             'password' => $password
         ]);
          return redirect()->back()->with('success','Profile Update Successfully!');
