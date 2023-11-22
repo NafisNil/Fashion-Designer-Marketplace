@@ -311,10 +311,10 @@
                     <div class="filter-list row clearfix">
                         
                         @foreach ($product as $item)
-                        <div class="shop-item mix music {{$item->id}} col-lg-3 col-md-6 col-sm-12">
+                        <div class="shop-item mix music {{$item->category}} col-lg-3 col-md-6 col-sm-12">
                             <div class="inner-box">
                                 <div class="image">
-                                    <a href="shop-detail.html"><img src="{{(!empty($item->logo))?URL::to('storage/'.$item->logo):URL::to('image/no_image.png')}}" alt="24short-img"></a>
+                                    <a href="{{route('designer.single', $item->id)}}"><img src="{{(!empty($item->logo))?URL::to('storage/'.$item->logo):URL::to('image/no_image.png')}}" alt="24short-img"></a>
                                     <span class="tag flaticon-heart"></span>
                                     
                                 </div>

@@ -64,9 +64,9 @@
 					
 							<!-- Price -->
 							<div class="price">{{$designer->min_price}} Tk- {{$designer->max_price}} Tk</div>
-							<div class="text">{!!$designer->desc!!}</div>
-                            <div class="text">{!!$designer->experience!!}</div>
-                            <div class="text">{!!$designer->expertise!!}</div>
+							<div class="text"><b>Description  </b> : {!!$designer->description!!}</div>
+                            <div class="text"><b>Experience  </b> : {!!$designer->experience!!}</div>
+                            <div class="text"><b>Expertise  </b> : {!!$designer->expertise!!}</div>
 							<div class="d-flex flex-wrap">
 								<!-- Model -->
 								<div class="model">
