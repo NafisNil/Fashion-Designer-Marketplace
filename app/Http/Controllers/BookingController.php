@@ -8,6 +8,7 @@ use App\Models\User;
 use App\Models\Contact;
 use App\Models\Logo;
 use App\Http\Requests\BookingRequest;
+use session;
 class BookingController extends Controller
 {
     /**
@@ -26,6 +27,7 @@ class BookingController extends Controller
         $data['designer'] = User::find($id);
         $data['contact'] = Contact::first();
         $data['logo'] = Logo::first();
+        
         return view('frontend.user.booking', $data);
     }
 
@@ -49,8 +51,11 @@ class BookingController extends Controller
     {
         //
         $booking = Booking::create($request->all());
+        $data['contact'] = Contact::first();
+        $data['logo'] = Logo::first();
+        $request->session()->put('success', 'Appointment booked successfully!');
 
-        return redirect()->back()->with('success',' Your appointment has been booked!');
+        return view('frontend.user.confirm_reg',$data);
     }
 
     /**
