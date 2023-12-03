@@ -116,7 +116,7 @@
                 <div class="sec-title">
                     <h2><span>Choose </span> from Category !</h2>
                 </div>
-                <div class="shopby-category owl-carousel owl-theme">				
+                <div style="display: flex;align-items: center;justify-content: center;" class="shopby-category owl-carousel owl-theme bg-theamvtg">				
                     <!-- Shop category -->
                     @foreach ($category as $item)
                   
@@ -359,7 +359,8 @@
                 <div class="inner-container">
                     <div class="sponsors-outer">
                         <!-- Sponsors Carousel -->
-                        <ul class="sponsors-carousel owl-carousel owl-theme">
+                        <ul class="sponsors-carousel owl-carousel owl-theme owl-loaded owl-drag" style="display: flex;align-items: center;justify-content: center;">
+
                             @foreach ($partner as $item)
                             <li class="slide-item"><figure class="image-box"><a href="#"><img src="{{(!empty($item->logo))?URL::to('storage/'.$item->logo):URL::to('image/no_image.png')}}" alt=""></a></figure></li>
                             @endforeach

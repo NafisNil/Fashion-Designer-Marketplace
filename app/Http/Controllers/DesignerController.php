@@ -45,6 +45,9 @@ class DesignerController extends Controller
             'max_price' => $request->max_price,
             'min_price' => $request->min_price,
             'sales_quantity' => $request->sales_quantity,
+            'facebook' => $request->facebook,
+            'instagram' => $request->instagram,
+            'youtube' => $request->youtube,
             'password' => $password
         ]);
          return redirect()->back()->with('success','Profile Update Successfully!');

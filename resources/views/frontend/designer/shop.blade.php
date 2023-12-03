@@ -46,42 +46,82 @@
                         </div>
                         <!-- End Filter Box -->
                         
+<!--extra -->
+
+
+
+
+<!-- extra -->
+
+
+                        
                         <div class="shops-outer">
                             <div class="row clearfix">
                               
                                 @foreach ($designer as $item)
                                 @php
                                 $product= App\Models\Product::select('logo')->where('designer_id', $item->id)->first();
+                                $product_list = App\Models\Product::select('logo')->where('designer_id', $item->id)->limit(5)->get();
                             @endphp
-                                <div class="shop-item col-lg-4 col-md-4 col-sm-12">
-                                    <div class="inner-box">
-                                        <div class="image">
-                                            <a href="{{route('designer.single', $item->id)}}"><img src="{{(!empty($product->logo))?URL::to('storage/'.$product->logo):URL::to('image/no_image.png')}}" alt="24short-img"></a>
-                                            <div class="options-box">
-                                             <!--   <ul class="option-list">
-                                                    <li><a class="flaticon-resize" href="shop-detail.html"></a></li>
-                                                    <li><a class="flaticon-heart" href="shop-detail.html"></a></li>
-                                                    <li><a class="flaticon-shopping-cart-2" href="shop-detail.html"></a></li>
-                                                </ul>-->
-                                            </div>
-                                        </div>
-                                        <div class="lower-content">
-                                   <!--         <div class="rating">
-                                                <span class="fa fa-star"></span>
-                                                <span class="fa fa-star"></span>
-                                                <span class="fa fa-star"></span>
-                                                <span class="fa fa-star"></span>
-                                                <span class="light fa fa-star"></span>
-                                            </div> -->
-                                            <h6><a href="{{route('designer.single', $item->id)}}">{{$item->name}} </a></h6>
-                                            <div class="d-flex justify-content-between align-items-center">
-                                                <div class="price">{{$item->min_price}}Tk - {{$item->max_price}}Tk</div>
-                                                <!-- Quantity Box -->
-                                   
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
+                           							<div class="shop-item mix col-lg-3 col-md-6 col-sm-12">
+                                                        <div class="inner-box">
+                                                            <div class="image">
+                                                                <a href="shop-detail.html">
+                                                
+                                                                    <div id="carouselExampleControls" class="carousel slide"
+                                                                        data-bs-ride="carousel" data-bs-interval="2000">
+                                                                        <div class="carousel-inner">
+                                                                            @foreach ($product_list as $item)
+                                                                            
+                                                                           
+                                                                            <div class="carousel-item active">
+                                                                                <img src="{{(!empty($item->logo))?URL::to('storage/'.$item->logo):URL::to('image/no_image.png')}}"
+                                                                                    class="d-block w-100" alt="...">
+                                                                            </div>
+                                                                            @endforeach
+                                                                        </div>
+                                                                        <button class="carousel-control-prev" type="button"
+                                                                            data-bs-target="#carouselExampleControls" data-bs-slide="prev">
+                                                                            <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                                                                            <span class="visually-hidden">Previous</span>
+                                                                        </button>
+                                                                        <button class="carousel-control-next" type="button"
+                                                                            data-bs-target="#carouselExampleControls" data-bs-slide="next">
+                                                                            <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                                                                            <span class="visually-hidden">Next</span>
+                                                                        </button>
+                                                                    </div>
+                        
+                                                                </a>
+                                                                <span class="tag flaticon-heart"></span>
+                                                                <div class="cart-box text-center">
+                                                                    <a class="cart" href="#">Add to Cart</a>
+                                                                </div>
+                                                            </div>
+                                                            <div class="lower-content">
+                                                                <div class="rating">
+                                                                    <span class="fa fa-star"></span>
+                                                                    <span class="fa fa-star"></span>
+                                                                    <span class="fa fa-star"></span>
+                                                                    <span class="fa fa-star"></span>
+                                                                    <span class="light fa fa-star"></span>
+                                                                </div>
+                                                                <h6>
+                                                                    <a href="shop-detail.html">masks 95 percent 0.3-μm <br />
+                                                                        particles</a>
+                                                                </h6>
+                                                                <div class="d-flex justify-content-between align-items-center">
+                                                                    <div class="price"><span>$239.52</span> $362.00</div>
+                                                                    <!-- Quantity Box -->
+                                                                    <div class="quantity-box">
+                                                                        <div class="item-quantity">
+                                                                            <input class="qty-spinner" type="text" value="1" name="quantity" />
+                                                                        </div>
+                                                                    </div>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                    </div>
                                 @endforeach
                                 <!-- Shop Item -->
                               
@@ -104,6 +144,24 @@
                     <div class="sidebar-side col-lg-3 col-md-12 col-sm-12">
                         <aside class="sidebar">
                             <div class="sidebar-inner">
+                                <div class="sidebar-widget category-widget">
+									<div class="filter-container">
+										<div class="label">
+											<span>Price Range</span>
+										</div>
+                                        <input type="range" id="priceRangeSlider" min="500" max="500000" value="500">
+										<style>
+											.{
+												justify-content: space-between;
+											}
+										</style>
+										<div class="price-range-inputs"  style="display: flex;align-items: center;justify-content: space-between;">
+											<input type="text" id="minPrice"  class="border" class="input-min text-center" style="width: 30%;" value="500">
+											<input type="text" id="maxPrice" class="border" class="input-max text-center" style="width: 30%;" value="500000">
+										</div>
+
+									</div>
+								</div>
                             <!-- Category Widget -->
                             <div class="sidebar-widget category-widget">
                                 <div class="widget-content">
@@ -142,6 +200,52 @@
 	
 	<!-- End Shop Page Section -->
 	
-
+    <script src="https://code.jquery.com/jquery-3.7.1.js" integrity="sha256-eKhayi8LEQwp4NKxN+CfCh+3qOVUtJn3QNZ0TciWLP4=" crossorigin="anonymous"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.3/jquery.min.js"></script>
 	<!-- End Products Section Six -->
+    <script>
+        $(document).ready(function() {
+    // Update min and max price inputs when range slider changes
+    $("#priceRangeSlider").on('input', function() {
+        var minPrice = $(this).val();
+        var maxPrice = $(this).attr('max');
+
+        $("#minPrice").val(minPrice);
+        $("#maxPrice").val(maxPrice);
+
+        // Trigger Ajax request to filter products
+        filterProducts();
+    });
+
+    // Update min and max price inputs when min or max input values change
+    $("#minPrice").on('input', function() {
+        filterProducts();
+    });
+
+    $("#maxPrice").on('input', function() {
+        filterProducts();
+    });
+
+    // Function to filter products
+    function filterProducts() {
+        var minPrice = $("#minPrice").val();
+        var maxPrice = $("#maxPrice").val();
+
+        // Send Ajax request to filter products
+        $.ajax({
+            url: "/products/filter",
+            method: "POST",
+            data: {
+                minPrice: minPrice,
+                maxPrice: maxPrice
+            },
+            success: function(data) {
+                // Update product list with filtered results
+                console.log(data);
+            }
+        });
+    }
+});
+
+    </script>
 @endsection

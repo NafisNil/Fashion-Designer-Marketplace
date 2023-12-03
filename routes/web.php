@@ -32,7 +32,7 @@ Route::get('/about-us',[FrontendController::class, 'about'])->name('about_us');
 Route::get('/contact-us',[FrontendController::class, 'contact'])->name('contact_us');
 Route::get('/shop-page',[FrontendController::class, 'shop'])->name('shop');
 Route::get('/designer-single/{id}',[FrontendController::class, 'single_designer'])->name('designer.single');
-
+Route::post('/products/filter', [FrontendController::class, 'filterProducts']);
 //admin
 
 

@@ -9,7 +9,7 @@
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
 <meta name="description" content="looms fashion">
 <meta name="keywords" content="Looms Fashion">
-
+<meta name="csrf-token" content="{{ csrf_token() }}">
 <!-- Responsive -->
 <meta name="viewport" content="width=device-width,initial-scale=1.0">
 

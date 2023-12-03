@@ -88,6 +88,27 @@
        
       </div>
       <div class="form-group">
+        <label for="exampleInputEmail1">Facebook </label>
+       
+        <input type="url" class="form-control" name="facebook" value="{!!old('facebook',@$edit->facebook)!!}">
+       
+      </div>
+
+
+      <div class="form-group">
+        <label for="exampleInputEmail1">Instagram </label>
+       
+        <input type="url" class="form-control" name="instagram" value="{!!old('instagram',@$edit->instagram)!!}">
+       
+      </div>
+
+      <div class="form-group">
+        <label for="exampleInputEmail1">Youtube </label>
+       
+        <input type="url" class="form-control" name="youtube" value="{!!old('youtube',@$edit->youtube)!!}">
+       
+      </div>
+      <div class="form-group">
         <label for="exampleInputEmail1">Password <span style="color:red" >*</span></label>
        
         <input type="password" class="form-control" name="password" value="{{@$edit->password}}" readonly>

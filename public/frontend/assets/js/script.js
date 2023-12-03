@@ -377,7 +377,8 @@
 		$('.shopby-category').owlCarousel({
 			//animateOut: 'fadeOut',
     		//animateIn: 'fadeIn',
-			loop:true,
+			// loop:true,
+			loop:false,
 			margin:30,
 			nav:true,
 			//autoHeight: true,
@@ -503,7 +504,8 @@
 	// Sponsors Carousel
 	if ($('.sponsors-carousel').length) {
 		$('.sponsors-carousel').owlCarousel({
-			loop:true,
+			loop:false,
+			// loop:true,
 			margin:30,
 			nav:true,
 			smartSpeed: 500,

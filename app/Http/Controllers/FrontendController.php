@@ -123,4 +123,15 @@ class FrontendController extends Controller
         $data['logo'] = Logo::first();
         return view('frontend.contact', $data);
     }
+
+    public function filterProducts(Request $request){
+        $minPrice = $request->input('minPrice');
+        $maxPrice = $request->input('maxPrice');
+
+        $products = User::where('min_price', '>=', $minPrice)
+            ->where('min_price', '<=', $maxPrice)
+            ->get();
+
+        return response()->json($products);
+    }
 }
